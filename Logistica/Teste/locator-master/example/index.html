@@ -1,0 +1,59 @@
+<!doctype html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Locator - a set of google location services for angularJS</title>
+    <meta name="description" content="">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/styles.css">
+    <!-- endstyles -->
+  </head>
+
+  <body ng-app="locatorDemo" ng-controller="MainCtrl">
+
+    <nav>
+      <h1>
+        Locator <small>a set of google location services for AngularJS</small>
+      </h1><!--
+       --><a href="https://github.com/winkerVSbecks/locator">github</a>
+    </nav>
+
+    <small class="tag-line">A set of google location services for AngularJS</small>
+
+    <div class="column black flex-item">
+      <h2>Location Lookup <img src="img/powered-by-google-on-non-white@2x.png" width="104px"></h2>
+      <location-lookup ng-model="lookedUpLocation" limit-to="4"></location-lookup>
+    </div>
+
+    <div class="column blue flex-item">
+      <h2>Location Picker <img src="img/powered-by-google-on-non-white@2x.png" width="104px"></h2>
+      <location-picker ng-model="pickedLocation" limit-to="5"></location-picker>
+    </div>
+
+    <div ng-class="{ false: 'modal', true: 'modal--show' }[isModalVisible]">
+      <div class="overlay" ng-click="toggleModal()"></div>
+      <div class="modal__contents modal--transition">
+        <a class="modal__close" href="" ng-click="toggleModal()">&times;</a>
+        <h3 ng-if="pickedLocation">Picked Location</h3>
+        <p ng-if="pickedLocation">Name: <span class="muted">{{pickedLocation.name}}</span><br/>Description: <span class="muted">{{pickedLocation.description}}</span><br/>Latitude: <span class="muted">{{pickedLocation.latitude}}</span><br/>Longitude: <span class="muted">{{pickedLocation.longitude}}</span></p>
+        <br/>
+        <br/>
+        <h3 ng-if="lookedUpLocation">Looked Up Location</h3>
+        <p ng-if="lookedUpLocation">Name: <span class="muted">{{lookedUpLocation.name}}</span><br/>Description: <span class="muted">{{lookedUpLocation.description}}</span><br/>Latitude: <span class="muted">{{lookedUpLocation.latitude}}</span><br/>Longitude: <span class="muted">{{lookedUpLocation.longitude}}</span></p>
+      </div>
+    </div>
+
+    <!-- Dependencies -->
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.min.js"></script>
+    <!-- endDependencies -->
+
+    <!-- Google Maps API -->
+    <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=AIzaSyDk_iQ6QWOTHW-TWoXSFLwbcnhaxlcnXXk&libraries=places&sensor=true"></script>
+
+    <!-- Scripts -->
+    <script src="locator/locator.min.js"></script>
+    <script src="locator/locator-tpl.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>

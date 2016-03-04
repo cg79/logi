@@ -1,0 +1,313 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <title>SmallFootprint ESB</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="Content/style.css" rel="stylesheet" />
+    <link href="Content/Toastr/toastr.css" rel="stylesheet" />
+    <link href="Content/font-awesome/font-awesome.min.css" rel="stylesheet" />
+    <link href="Content/Bootstrap/bootstrap.min.css" rel="stylesheet" />
+    <link href="Scripts/SmartTable/smartTable.css" rel="stylesheet" />
+    <link href="Scripts/DatePicker/datepicker.min.css" rel="stylesheet" />
+    <link href="Scripts/DatePicker/bootstrap-datetimepicker.css" rel="stylesheet" />
+    <link href="Scripts/select2-3.5.1/select.css" rel="stylesheet" />
+  </head>
+
+  <body  data-ng-cloak data-ng-controller="AppController as vm">
+    <div class="header-top">
+        <div class="container">
+            <div  ng-include="lsp"></div>
+         </div>
+    </div>
+
+    <div id="header">
+            <div class="overlay">
+                <nav class="navbar" role="navigation">
+                    <div class="container">
+                        <!-- Brand and toggle get grouped for better mobile display -->
+                        <div class="navbar-header">
+                            <button type="button" class="btn-block btn-drop navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                                <strong>MENU</strong>
+                            </button>
+                        </div>
+                    
+                        <!-- Collect the nav links, forms, and other content for toggling -->
+                        <div class="collapse navbar-collapse navbar-ex1-collapse">
+                            <ul class="nav navbar-nav">
+                                <li>
+                                    <a href="index.html">
+                                        <div class="text-center">
+                                            <i class="fa fa-dashboard fa-3x" data-original-title="" title=""></i><br>
+                                            Dashboard
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="dropdown">
+                                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                                        <div class="text-center">
+                                            <i class="fa fa-laptop fa-3x" data-original-title="" title=""></i><br>
+                                            UI Element <span class="caret"></span>
+                                        </div>
+                                    </a>
+                                    <ul class="dropdown-menu" role="menu">
+                                        <li><a href="button.html"><i class="fa fa-lemon-o" data-original-title="" title=""></i> Button</a></li>
+                                        <li><a href="icon.html"><i class="fa fa-puzzle-piece" data-original-title="" title=""></i> Icon</a></li>
+                                        <li><a href="panel-well.html"><i class="fa fa-file" data-original-title="" title=""></i> Panel &amp; Well</a></li>
+                                        <li class="divider"></li>
+                                        <li><a href="grid.html"><i class="fa fa-th" data-original-title="" title=""></i> Grid</a></li>
+                                        <li><a href="breadcrumb-pagination.html"><i class="fa fa-send" data-original-title="" title=""></i> Breadcrumb &amp; Pagination</a></li>
+                                        <li><a href="jumbotron-thumbnail.html"><i class="fa fa-flag" data-original-title="" title=""></i> Jumbotron &amp; Thumbnail</a></li>
+                                        <li class="divider"></li>
+                                        <li><a href="collapse.html"><i class="fa fa-archive" data-original-title="" title=""></i> Collapse</a></li>
+                                        <li><a href="typography.html"><i class="fa fa-font" data-original-title="" title=""></i> Typography</a></li>
+                                        <li><a href="alert-progress-bar.html"><i class="fa fa-coffee" data-original-title="" title=""></i> Alert &amp; Progress Bar</a></li>
+                                        <li class="divider"></li>
+                                        <li><a href="list-media.html"><i class="fa fa-paw" data-original-title="" title=""></i> List Media</a></li>
+                                        <li><a href="slider.html"><i class="fa fa-legal" data-original-title="" title=""></i> Slider</a></li>
+                                        <li><a href="popup-notip.html"><i class="fa fa-bullhorn" data-original-title="" title=""></i>Popup &amp; Notifications</a></li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown">
+                                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                                        <div class="text-center">
+                                             <i class="fa fa-list fa-3x" data-original-title="" title=""></i><br>
+                                            Form Element <span class="caret"></span>
+                                        </div>
+                                    </a>
+                                    <ul class="dropdown-menu" role="menu">
+                                        <li><a href="form-component.html"><i class="fa fa-list-alt" data-original-title="" title=""></i> Form Component</a></li>
+                                        <li><a href="advanced-component.html"><i class="fa fa-list-ul" data-original-title="" title=""></i> Advanced Component</a></li>
+                                        <li><a href="form-wizard.html"><i class="fa fa-columns" data-original-title="" title=""></i> Form Wizard</a></li>
+                                        <li class="divider"></li>
+                                        <li><a href="form-validation.html"><i class="fa fa-check-square" data-original-title="" title=""></i> Form-Validation</a></li>
+                                        <li><a href="dropzone-file-upload.html"><i class="fa fa-send" data-original-title="" title=""></i> Dropzone File Upload</a></li>
+                                        <li><a href="multiple-file-upload.html"><i class="fa fa-file-o" data-original-title="" title=""></i> Multiple File Upload</a></li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown active">
+                                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                                        <div class="text-center">
+                                            <i class="fa fa-folder-open fa-3x" data-original-title="" title=""></i><br>
+                                            Data Tables <span class="caret"></span>
+                                        </div>
+                                    </a>
+                                    <ul class="dropdown-menu" role="menu">
+                                        <li><a href="basic-table.html"><i class="fa fa-table" data-original-title="" title=""></i> Basic Table</a></li>
+                                        <li><a href="responsive-table.html"><i class="fa fa-table" data-original-title="" title=""></i> Responsive Table</a></li>
+                                        <li><a href="dynamic-table.html"><i class="fa fa-table" data-original-title="" title=""></i> Dynamic Table</a></li>
+                                        <li><a href="editable-table.html"><i class="fa fa-table" data-original-title="" title=""></i> Editable Table</a></li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown">
+                                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                                        <div class="text-center">
+                                            <i class="fa fa-bar-chart-o fa-3x" data-original-title="" title=""></i><br>
+                                            charts <span class="caret"></span>
+                                        </div>
+                                    </a>
+                                    <ul class="dropdown-menu" role="menu">
+                                        <li><a href="moris.html"><i class="fa fa-bar-chart-o" data-original-title="" title=""></i> Moris</a></li>
+                                        <li><a href="chartjs.html"><i class="fa fa-bar-chart-o" data-original-title="" title=""></i> Chartjs</a></li>
+                                        <li><a href="xcharts.html"><i class="fa fa-bar-chart-o" data-original-title="" title=""></i> xCharts</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="google-maps.html">
+                                        <div class="text-center">
+                                            <i class="fa fa-location-arrow fa-3x" data-original-title="" title=""></i><br>
+                                            Google Maps
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="dropdown">
+                                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                                        <div class="text-center">
+                                            <i class="fa fa-home fa-3x" data-original-title="" title=""></i><br>
+                                            Real Estates <span class="caret"></span>
+                                        </div>
+                                    </a>
+                                    <ul class="dropdown-menu" role="menu">
+                                        <li><a href="property.html"><i class="fa fa-institution" data-original-title="" title=""></i> Property List</a></li>
+                                        <li><a href="property-column.html"><i class="fa fa-th-large" data-original-title="" title=""></i> Property Column</a></li>
+                                        <li><a href="property-detail.html"><i class="fa fa-th-list" data-original-title="" title=""></i> Property Detail</a></li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown">
+                                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                                        <div class="text-center">
+                                            <i class="fa fa-shopping-cart fa-3x" data-original-title="" title=""></i><br>
+                                            Stores <span class="caret"></span>
+                                        </div>
+                                    </a>
+                                    <ul class="dropdown-menu" role="menu">
+                                        <li><a href="store.html"><i class="fa fa-gift" data-original-title="" title=""></i> Store List</a></li>
+                                        <li><a href="store-detail.html"><i class="fa fa-gift" data-original-title="" title=""></i> Store Detail</a></li>
+                                        <li><a href="shopping-cart.html"><i class="fa fa-gift" data-original-title="" title=""></i> Shopping Cart</a></li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown">
+                                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                                        <div class="text-center">
+                                            <i class="fa fa-plus-square fa-3x" data-original-title="" title=""></i><br>
+                                            Extras Pages <span class="caret"></span>
+                                        </div>
+                                    </a>
+                                    <ul class="dropdown-menu" role="menu">
+                                        <li><a href="login.html"><i class="fa fa-unlock-alt" data-original-title="" title=""></i> Login</a></li>
+                                        <li><a href="page-blank.html"><i class="fa fa-square-o" data-original-title="" title=""></i> Blank Page</a></li>
+                                        <li class="divider"></li>
+                                        <li><a href="invoice.html"><i class="fa fa-thumbs-o-up" data-original-title="" title=""></i> Invoice</a></li>
+                                        <li><a href="princing-table.html"><i class="fa fa-gavel" data-original-title="" title=""></i> Princing Table</a></li>
+                                        <li><a href="faq.html"><i class="fa fa-sun-o" data-original-title="" title=""></i> FAQ</a></li>
+                                        <li class="divider"></li>
+                                        <li><a href="register.html"><i class="fa fa-plus" data-original-title="" title=""></i> Register</a></li>
+                                        <li><a href="404.html"><i class="fa fa-warning" data-original-title="" title=""></i> 404 Error</a></li>
+                                        <li><a href="500.html"><i class="fa fa-warning" data-original-title="" title=""></i> 500 Error</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div><!-- /.navbar-collapse -->
+                    </div>
+                </nav>
+            </div>
+        </div>
+
+
+    <div class="container">
+      
+
+      
+     
+      <!-- Main area -->
+<div class="row">
+	<div class="left-side">
+		<div class="panel-group" id="accordion">
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h4 class="panel-title">
+					<a data-toggle="collapse"  href="#collapse2"><span class="glyphicon glyphicon-plus"></span> Cautare</a>
+					</h4>
+				</div>
+				<div id="collapse2" class="panel-collapse collapse in">
+					<ul class="list-group">
+						<li class="list-group-item"><span class="glyphicon glyphicon-edit text-success"></span> <a ng-click=navigateTo("/transport/search")>CAutare</a></li>
+						<li class="list-group-item"><span class="glyphicon glyphicon-share-alt text-info"></span> <a ng-click=navigateTo("/transport/add")>Adaugare traseu</a></li>
+						<li class="list-group-item"><span class="glyphicon glyphicon-bell text-success"></span> <a>Users online</a><span class="badge">7</span></li>
+					</ul>
+				</div>
+			</div>
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h4 class="panel-title">
+					<a data-toggle="collapse" href="#collapseOne"><span class="glyphicon glyphicon-plus"></span> MIjloace Transport</a>
+					</h4>
+				</div>
+				<div id="collapseOne" class="panel-collapse collapse in">
+					<ul class="list-group">
+						<!-- <li class="list-group-item"><span class="glyphicon glyphicon-pencil text-primary"></span> <a>Blogs</a>
+						<ul class="list-group">
+							<li class="list-group-item"><span class="glyphicon glyphicon-minus text-primary"></span> <a>Edit Blog</a></li>
+							<li class="list-group-item"><span class="glyphicon glyphicon-minus text-success"></span> <a>Publish Blog</a></li>
+							<li class="list-group-item"><span class="glyphicon glyphicon-minus text-warning"></span> <a>Delete Blog</a></li>
+						</ul>
+					</li> -->
+					<li class="list-group-item"><span class="glyphicon glyphicon-edit text-success"></span> <a ng-click=navigateTo("/car/add_edit")>Adaugare MAsina</a></li>
+					<li class="list-group-item"><span class="glyphicon glyphicon-share-alt text-info"></span> <a ng-click=navigateTo("/car/list")>Flota</a></li>
+					<li class="list-group-item"><span class="glyphicon glyphicon-bell text-success"></span> <a>Users online</a><span class="badge">7</span></li>
+				</ul>
+			</div>
+		</div>
+
+		<div class="panel panel-default">
+				<div class="panel-heading">
+					<h4 class="panel-title">
+					<a data-toggle="collapse"  href="#collapse3"><span class="glyphicon glyphicon-plus"></span> Detalii</a>
+					</h4>
+				</div>
+				<div id="collapse3" class="panel-collapse collapse in">
+					<ul class="list-group">
+						<li class="list-group-item"><span class="glyphicon glyphicon-edit text-success"></span> <a ng-click=navigateTo("/user/changePassword")>Schimbare Parola</a></li>
+						<li class="list-group-item"><span class="glyphicon glyphicon-share-alt text-info"></span> <a ng-click=navigateTo("/user/profil")>Profil</a></li>
+						<li class="list-group-item"><span class="glyphicon glyphicon-bell text-success"></span> <a>Users online</a><span class="badge">7</span></li>
+                        <li class="list-group-item"><span class="glyphicon glyphicon-bell text-success"></span> <a ng-click=navigateTo("/company")>Companie</a><span class="badge">7</span></li>
+					</ul>
+				</div>
+			</div>
+		
+	</div>
+	</div>
+	<div class="col-md-9">
+		<div class="col-md-12">
+			<div class="addNewUser" ng-include="ShowUserControls && ViewPath"></div>
+		</div>
+		<div class="slide-animation-container">
+			<div data-ng-view id="ng-view" class="slide-animation"></div>
+		</div>
+	</div>
+</div>
+
+
+      <div data-wc-overlay data-wc-overlay-delay="300">
+        <br /><img src="Content/images/spinner.gif" />&nbsp;&nbsp;Loading
+      </div>
+      <div
+        class="fb-like"
+        data-share="true"
+        data-width="450"
+        data-show-faces="true">
+      </div>
+      <fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
+      </fb:login-button>
+      <div id="status">
+      </div>
+    </div>
+    <!--jquery-->
+    <script src="Scripts/JQuery/jquery-1.9.1.min.js"></script>
+    <!--<script src="Scripts/jquery-2.1.0/jquery-2.1.0.min.js"></script>-->
+    <!-- 3rd party libraries -->
+    <script src="Scripts/Angular/angular.min.js"></script>
+    <script src="Scripts/Angular/angular-route.min.js"></script>
+    <script src="Scripts/Angular/angular-resource.js"></script>
+    <script src="Scripts/Angular/ui-utils.js"></script>
+    <script src="Scripts/Angular/angular-local-storage.js"></script>
+    <!--<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.1/angular-animate.min.js"></script>-->
+    <script src="Scripts/Angular/angular-ui-bootstrap.js"></script>
+    <script src="Scripts/Angular/angular-sanitize.js"></script>
+    <!--bootstrap-->
+    <script src="Scripts/Bootstrap/bootstrap.min.js"></script>
+    <!--<script src="Scripts/Bootstrap/ui-bootstrap-tpls-0.12.0.min.js"></script>-->
+
+    <script src="Scripts/Bootstrap/ui-bootstrap-tpls-0.13.0.js"></script>
+    <!--<script src="app/wc.directives/directives/wcOverlay.js"></script>
+    <script src="app/wc.directives/directives/menuHighlighter.js"></script>-->
+    <!--Toastr-->
+    <script src="Scripts/Toastr/toastr.js"></script>
+    <!--aes-->
+    <script src="Scripts/AES/aes.js"></script>
+    <!--Undescore-->
+    <script src="Scripts/Undescore/underscore-min.js"></script>
+    <!--SmartTable-->
+    <script src="Scripts/SmartTable/SmartTable.debug.js"></script>
+    <script src="Scripts/SmartTable/lrDragAndDrop.js"></script>
+    <!--ace editor-->
+    
+    <!--<script src="http://www.bootply.com/plugins/bootstrap-select.min.js"></script>-->
+    <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true&libraries=places&language=ro-RO"></script>
+    <!--<script type="text/javascript" src="https://www.google.com/jsapi"></script>-->
+    
+    <script type="text/javascript" src="app/utils/ctxMenu.js"></script>
+    <script type="text/javascript" src="Scripts/Moment/moment-with-locales.js"></script>
+    <script type="text/javascript" src="Scripts/DatePicker/bootstrap-datetimepicker.js"></script>
+    <script type="text/javascript" src="Scripts/Phone/phone-format.min.js"></script>
+    <script type="text/javascript" src="Scripts/select2-3.5.1/select.js"></script>
+    <script src="Scripts/Angular/angular-file-upload-all.js"></script>
+    <script src="Scripts/SignalR/jquery.signalR-2.1.2.min.js"></script>
+    <script src="/Logistica/signalr/hubs" type="text/javascript"></script>
+    <!-- Load custom scripts via RequireJS -->
+    <script src="Scripts/requirejs/require.js" data-main="app/main"></script>
+    <!--<script src="Scripts/ace-master/lib/ace/ace.js"></script>-->
+    
+  
+  </body>
+</html>

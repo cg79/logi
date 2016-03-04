@@ -1,0 +1,41 @@
+// ==UserScript==
+// @name        cmodels
+// @namespace   n1
+// @include     https://www.blablacar.ro/dashboard/profile/car/add
+// @version     1
+// @grant       none
+// ==/UserScript==
+
+
+$('#profile_car_make').on('change', function() {
+        var sss = $(this).find(":selected").val();
+    //alert( $(this).find(":selected").val() );
+        //alert(sss);
+        var myUrl =  "https://www.blablacar.ro/car-models/";
+                                myUrl = myUrl+ sss+"?ajax=true";
+
+                                 $.ajax({
+                                            url: myUrl,
+                                            type: "GET",
+                                            cache: false,
+                                            success: function (data, textStatus, jqXHR) {
+                                                  var rez = "'"+sss+"'" + ":[";
+                                                 
+                                              
+                                                var models1 = data.toString().split(",");
+                                                for(var i=0;i<models1.length;i++)
+                                                    {
+                                                     rez = rez + "'"+models1[i]+"'"+",";
+                                                    }
+                                                
+                                                rez = rez + "###]";
+                                                    console.info(rez);   
+
+                                            },
+                                            error: function (jqXHR, textStatus, errorThrown) {
+                                                console.log(jqXHR);     
+
+                                            }
+                                        });
+});
+

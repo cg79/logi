@@ -1,0 +1,10 @@
+<div class="row col-md-4" >
+	<custom-dropdown elements="controlData" label="Custom Dropdown" select-model="dropDown" on-change-method="changeDropDown(element)"></custom-dropdown>
+	Selected element: <strong> {{dropDown.name}} </strong>
+</div>
+<div class="row col-md-8">
+	<label>Countries</label>
+	<div ng-repeat="country in countries track by $index">
+		{{country.name}} 
+	</div>
+</div>

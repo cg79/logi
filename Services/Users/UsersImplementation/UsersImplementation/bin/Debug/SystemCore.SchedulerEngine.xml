@@ -1,0 +1,1222 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SystemCore.SchedulerEngine</name>
+    </assembly>
+    <members>
+        <member name="T:SchedulerEngine.Base.BaseRequest">
+            <summary>
+            Represent the base request for all scheduler requests
+            </summary>
+        </member>
+        <member name="M:SchedulerEngine.Base.BaseRequest.CreateSchedulerRequest">
+            <summary>
+            Returns a class containing the scheduler intervals
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SchedulerEngine.Base.BaseRequest.GetRecurringInfo(Scheduler.DataRequest.SchedulerRequest)">
+            <summary>
+            call the Scheduler Request renderer in order to obtain the list of scheduler values
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="T:SchedulerEngine.Request.Daily.Daily">
+            <summary>
+            Daily class used to read the developer input request
+            </summary>
+        </member>
+        <member name="F:SchedulerEngine.Request.Daily.Daily.dailyType">
+            <summary>
+            DailyType value; 
+            DailyType { NotSet = -1, OnEveryXDays = 1, OnEveryWeekday = 4 ,}
+            </summary>
+        </member>
+        <member name="M:SchedulerEngine.Request.Daily.Daily.SchedulerSettings(Scheduler.DataRequest.SchedulerIntervals)">
+            <summary>
+            Set the scheduler interval; Start Date; End Date, Recurrence No
+            </summary>
+            <param name="range"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SchedulerEngine.Request.Daily.Daily.SchedulerSettings(System.Action{SchedulerEngine.Request.SchedulerRequestSettings})">
+            <summary>
+            Delegate used to set the scheduler interval; Start Date; End Date, Recurrence No
+            </summary>
+            <param name="settings"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SchedulerEngine.Request.Daily.Daily.EveryXDays(System.Int32)">
+            <summary>
+            Set the EveryXDays value 
+            </summary>
+            <param name="everyXDays"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SchedulerEngine.Request.Daily.Daily.GetRecurrenceValues">
+            <summary>
+            Returns the Recurrence Values
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:SchedulerEngine.Request.Daily.Once">
+            <summary>
+            Once class used to get the developer information for week days
+            </summary>
+        </member>
+        <member name="M:SchedulerEngine.Request.Daily.Once.SchedulerSettings(System.Action{SchedulerEngine.Request.SchedulerRequestSettings})">
+            <summary>
+            Delegate used to set the scheduler interval; Start Date; End Date, Recurrence No
+            </summary>
+            <param name="settings"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SchedulerEngine.Request.Daily.Once.SchedulerSettings(Scheduler.DataRequest.SchedulerIntervals)">
+            <summary>
+            Set the scheduler interval; Start Date; End Date, Recurrence No
+            </summary>
+            <param name="range"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SchedulerEngine.Request.Daily.Once.GetRecurrenceValues">
+            <summary>
+            Delegate used to set the scheduler interval; Start Date; End Date, Recurrence No
+            </summary>
+            <param name="settings"></param>
+            <returns></returns>
+        </member>
+        <member name="T:SchedulerEngine.Request.SchedulerRequestSettings">
+            <summary>
+            Represent the request settings intervals; Start Date; End Date and the IntervalPattern
+            </summary>
+        </member>
+        <member name="M:SchedulerEngine.Request.SchedulerRequestSettings.IntervalType(Scheduler.DataRequest.IntervalPattern)">
+            <summary>
+            represent the request type of the interval
+            IntervalPattern { NotSet = 0, OccurenceNumber = 1, EndDate = 2 }
+            </summary>
+            <param name="intervalPattern"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SchedulerEngine.Request.SchedulerRequestSettings.StartDate(System.DateTime)">
+            <summary>
+            Represent the Start Date value
+            This value is mandatory
+            </summary>
+            <param name="startDate"></param>
+            <returns></returns>
+        </member>
+        <member name="P:SchedulerEngine.Request.SchedulerRequestSettings.startDate">
+            <summary>
+            start date
+            </summary>
+        </member>
+        <member name="P:SchedulerEngine.Request.SchedulerRequestSettings.maxOccurencesNo">
+            <summary>
+            Maximum number of results
+            the default value is 1100
+            </summary>
+        </member>
+        <member name="P:SchedulerEngine.Request.SchedulerRequestSettings.endDate">
+            <summary>
+            The end date of the request;
+            It is used only if the request type is By End Date
+            </summary>
+        </member>
+        <member name="T:SchedulerEngine.Request.IntervalsWrapper">
+            <summary>
+            Class used only to read the properties set by developer
+            This class is internal
+            </summary>
+        </member>
+        <member name="P:SchedulerEngine.Request.IntervalsWrapper.StartDateValue">
+            <summary>
+            StartDateValue
+            </summary>
+        </member>
+        <member name="P:SchedulerEngine.Request.IntervalsWrapper.EndDateValue">
+            <summary>
+            End Date value
+            </summary>
+        </member>
+        <member name="P:SchedulerEngine.Request.IntervalsWrapper.MaxOccurencesNoValue">
+            <summary>
+            MaxOccurencesNoValue
+            </summary>
+        </member>
+        <member name="P:SchedulerEngine.Request.IntervalsWrapper.IntervalPatternValue">
+            <summary>
+            IntervalPattern
+            </summary>
+        </member>
+        <member name="T:SchedulerEngine.Request.Monthly.Monthly">
+            <summary>
+            Represent the Monthly request used for a fluent interface approach
+            </summary>
+        </member>
+        <member name="M:SchedulerEngine.Request.Monthly.Monthly.SchedulerSettings(System.Action{SchedulerEngine.Request.SchedulerRequestSettings})">
+            <summary>
+            Delegate used to set the scheduler interval; Start Date; End Date, Recurrence No
+            </summary>
+            <param name="settings"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SchedulerEngine.Request.Monthly.Monthly.SchedulerSettings(Scheduler.DataRequest.SchedulerIntervals)">
+            <summary>
+            Set the scheduler interval; Start Date; End Date, Recurrence No
+            </summary>
+            <param name="range"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SchedulerEngine.Request.Monthly.Monthly.DayNo(System.Int32)">
+            <summary>
+            Day No
+            </summary>
+            <param name="dayNo"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SchedulerEngine.Request.Monthly.Monthly.EveryXMonths(System.Int32)">
+            <summary>
+            Every X Months
+            </summary>
+            <param name="everyXMonths"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SchedulerEngine.Request.Monthly.Monthly.GetRecurrenceValues">
+            <summary>
+            Returns the Recurrence Values
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:SchedulerEngine.Request.Monthly.MonthlyRelative.frequencyInterval">
+            <summary>
+            Second part of a custom date. This is day of week, weekend day, etc.
+            </summary>
+        </member>
+        <member name="P:SchedulerEngine.Request.Monthly.MonthlyRelative.relativeInterval">
+            <summary>
+            First part of a custom date. This would be First, Second, etc. item of the month.
+            </summary>
+        </member>
+        <member name="M:SchedulerEngine.Request.Weekly.Weekly.SchedulerSettings(System.Action{SchedulerEngine.Request.SchedulerRequestSettings})">
+            <summary>
+            Delegate used to set the scheduler interval; Start Date; End Date, Recurrence No
+            </summary>
+            <param name="settings"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SchedulerEngine.Request.Weekly.Weekly.SchedulerSettings(Scheduler.DataRequest.SchedulerIntervals)">
+            <summary>
+            Set the scheduler interval; Start Date; End Date, Recurrence No
+            </summary>
+            <param name="range"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SchedulerEngine.Request.Weekly.Weekly.EveryXWeeks(System.Int32)">
+            <summary>
+            Every X Weeks
+            </summary>
+            <param name="everyXWeeks"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SchedulerEngine.Request.Weekly.Weekly.SelectedDays(Scheduler.DataRequest.DayEnum[])">
+            <summary>
+            The developer has the option to set the selected days
+            </summary>
+            <param name="day"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SchedulerEngine.Request.Weekly.Weekly.SelectedDays(System.Int32)">
+            <summary>
+            Selected days as a bit wise approach
+            </summary>
+            <param name="selectedDaysBitWiseValue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SchedulerEngine.Request.Weekly.Weekly.GetRecurrenceValues">
+            <summary>
+            Get the Recurrence Values
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SchedulerEngine.Request.Yearly.Yearly.SchedulerSettings(System.Action{SchedulerEngine.Request.SchedulerRequestSettings})">
+            <summary>
+            Delegate used to set the scheduler interval; Start Date; End Date, Recurrence No
+            </summary>
+            <param name="settings"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SchedulerEngine.Request.Yearly.Yearly.SchedulerSettings(Scheduler.DataRequest.SchedulerIntervals)">
+            <summary>
+            Set the scheduler interval; Start Date; End Date, Recurrence No
+            </summary>
+            <param name="range"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SchedulerEngine.Request.Yearly.Yearly.DayNo(System.Int32)">
+            <summary>
+            Day NO
+            </summary>
+            <param name="dayNo"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SchedulerEngine.Request.Yearly.Yearly.Month(Scheduler.DataRequest.FrequencyMonthValue)">
+            <summary>
+            the Month used for a Yearly request
+            </summary>
+            <param name="month"></param>
+            <returns></returns>
+        </member>
+        <member name="F:SchedulerEngine.Request.Yearly.Yearly.everyXYears">
+            <summary>
+            Every X years
+            Default value is 1
+            </summary>
+        </member>
+        <member name="M:SchedulerEngine.Request.Yearly.Yearly.GetRecurrenceValues">
+            <summary>
+            Get the recurrence Values
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SchedulerEngine.Request.Yearly.YearlyRelative.SchedulerSettings(System.Action{SchedulerEngine.Request.SchedulerRequestSettings})">
+            <summary>
+            Delegate used to set the scheduler interval; Start Date; End Date, Recurrence No
+            </summary>
+            <param name="settings"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SchedulerEngine.Request.Yearly.YearlyRelative.SchedulerSettings(Scheduler.DataRequest.SchedulerIntervals)">
+            <summary>
+            Set the scheduler interval; Start Date; End Date, Recurrence No
+            </summary>
+            <param name="range"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SchedulerEngine.Request.Yearly.YearlyRelative.FrequencyRelative(Scheduler.DataRequest.FrequencyRelativeInterval)">
+            <summary>
+            FrequencyRelativeInterval
+            {  First=1, Second=2, Third=4, Fourth=8, Fifth = 16,Last=32 }
+            </summary>
+        </member>
+        <member name="M:SchedulerEngine.Request.Yearly.YearlyRelative.FrequencyInterval(Scheduler.DataRequest.FrequencyDaysValue)">
+            <summary>
+            FrequencyDaysValue
+            FrequencyDaysValue {  Sunday = 1, Monday =2, Tuesday=3, Wednesday=4, Thursday=5, Friday=6, Saturday=7, Day=8, Weekday=9, WeekendDay=10, }
+            </summary>
+            <param name="frequencyInterval"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SchedulerEngine.Request.Yearly.YearlyRelative.FrequenceRecurrenceFactor(Scheduler.DataRequest.FrequencyMonthValue)">
+            <summary>
+            FrequencyMonthValue
+            FrequencyMonthValue {  January = 1, February, March, April, May, June, July, August, September, October, November, December }
+            </summary>
+            <param name="frequenceRecurrenceFactor"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SchedulerEngine.Request.Yearly.YearlyRelative.GetRecurrenceValues">
+            <summary>
+            Return the Reccurence values
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:SchedulerEngine.XmlExtensionMethods">
+            <summary>
+            XML serialization extension methods
+            </summary>
+        </member>
+        <member name="M:SchedulerEngine.XmlExtensionMethods.ToXml(System.Object)">
+            <summary>
+            returns the XML associated with the current object
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SchedulerEngine.XmlExtensionMethods.FromXml``1(System.String)">
+            <summary>
+            create a new T object based on the input XML
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="data"></param>
+            <returns></returns>
+        </member>
+        <member name="T:SchedulerEngine.Renderer.SchedulerRequestRenderer">
+            <summary>
+            Class used to invoke the logic of the scheduler
+            
+            </summary>
+        </member>
+        <member name="M:SchedulerEngine.Renderer.SchedulerRequestRenderer.GetRecurringInfo(System.String)">
+            <summary>
+            Return the Recurring information based on a XML request passed as a string
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SchedulerEngine.Renderer.SchedulerRequestRenderer.GetRecurringInfo(Scheduler.DataRequest.SchedulerRequest)">
+            <summary>
+            Get the Recurrence values by calling the Scheduler logic classes
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="P:SchedulerEngine.Renderer.SchedulerRequestRenderer.MaxRecurrenceNo">
+            <summary>
+            Max Recurrence No
+            the default value is 1100 and can be ovevriden by setting the MaxRecurrenceNo key into the AppSettings
+            </summary>
+        </member>
+        <member name="T:Scheduler.DataRequest.DailyRequest">
+            <summary>
+            Class used internally to pass the Daily information to the Scheduler.Logic
+            </summary>
+        </member>
+        <member name="P:Scheduler.DataRequest.DailyRequest.EveryXDays">
+            <summary>
+            Represent the days interval value 
+            </summary>
+        </member>
+        <member name="P:Scheduler.DataRequest.DailyRequest.DailyReccurenceType">
+            <summary>
+            Represent the daily Recurrence type
+            DailyType { NotSet = -1, OnEveryXDays = 1, OnEveryWeekday = 4 ,}
+            </summary>
+        </member>
+        <member name="T:Scheduler.DataRequest.SchedulerIntervals">
+            <summary>
+            Scheduler Intervals used to get the developer values and pass to the Scheduler logic 
+            </summary>
+        </member>
+        <member name="P:Scheduler.DataRequest.SchedulerIntervals.IntervalPattern">
+            <summary>
+             POssible values are NotSet = 0, OccurenceNumber = 1, EndDate = 2
+            </summary>
+        </member>
+        <member name="P:Scheduler.DataRequest.SchedulerIntervals.StartDate">
+            <summary>
+            start date
+            </summary>
+        </member>
+        <member name="P:Scheduler.DataRequest.SchedulerIntervals.MaxOccurencesNo">
+            <summary>
+            maximum number of results
+            </summary>
+        </member>
+        <member name="P:Scheduler.DataRequest.SchedulerIntervals.EndDate">
+            <summary>
+            the end date 
+            </summary>
+        </member>
+        <member name="T:Scheduler.DataRequest.MonthlyPattern">
+            <summary>
+            Contains the properties for a Monthly Request
+            </summary>
+        </member>
+        <member name="P:Scheduler.DataRequest.MonthlyPattern.DayNo">
+            <summary>
+            Day No
+            </summary>
+        </member>
+        <member name="P:Scheduler.DataRequest.MonthlyPattern.EveryXMonths">
+            <summary>
+            Every X Months
+            </summary>
+        </member>
+        <member name="T:Scheduler.DataRequest.MonthlyRelativePattern">
+            <summary>
+            Contains the proeprties for a MOnthly relative request
+            </summary>
+        </member>
+        <member name="P:Scheduler.DataRequest.MonthlyRelativePattern.EveryXMonths">
+            <summary>
+            Every X Months
+            </summary>
+        </member>
+        <member name="P:Scheduler.DataRequest.MonthlyRelativePattern.FrequencyRelative">
+            <summary>
+            First part of a custom date. This would be First, Second, etc. item of the month.
+            </summary>
+        </member>
+        <member name="P:Scheduler.DataRequest.MonthlyRelativePattern.FrequencyDaysValue">
+            <summary>
+            Second part of a custom date. This is day of week, weekend day, etc.
+            </summary>
+        </member>
+        <member name="T:Scheduler.DataRequest.MonthlyRequest">
+            <summary>
+            Represent a Monthly request
+            </summary>
+        </member>
+        <member name="P:Scheduler.DataRequest.MonthlyRequest.MonthlyType">
+            <summary>
+            Monthly type
+            public enum MonthlyType { NotSet = -1, Monthly = 16, MonthlyRelative = 32 };
+            </summary>
+        </member>
+        <member name="P:Scheduler.DataRequest.MonthlyRequest.MonthlyRelativePattern">
+            <summary>
+            Contains the Monthly relative values
+            </summary>
+        </member>
+        <member name="P:Scheduler.DataRequest.MonthlyRequest.MonthlyPattern">
+            <summary>
+            contains the monthly request values
+            </summary>
+        </member>
+        <member name="T:Scheduler.DataRequest.SchedulerRequest">
+            <summary>
+            Represent the request which contains all the possible properties used by th eScheduler logic classes
+            </summary>
+        </member>
+        <member name="F:Scheduler.DataRequest.SchedulerRequest.SchedulerIntervals">
+            <summary>
+            The date time interval and the recurrence pattern
+            </summary>
+        </member>
+        <member name="P:Scheduler.DataRequest.SchedulerRequest.RecurrencePattern">
+            <summary>
+            RecurrenceType { NotSet=0, Daily=1,Weekly=4,Monthly =8, Yearly = 16}
+            </summary>
+        </member>
+        <member name="P:Scheduler.DataRequest.SchedulerRequest.UpperRecurrenceLimit">
+            <summary>
+            Upper Recurrence limit is 1100
+            </summary>
+        </member>
+        <member name="P:Scheduler.DataRequest.SchedulerRequest.DailyRequest">
+            <summary>
+            Contains the Daily request properties
+            </summary>
+        </member>
+        <member name="P:Scheduler.DataRequest.SchedulerRequest.WeeklyRequest">
+            <summary>
+            Contains the Weekly request properties
+            </summary>
+        </member>
+        <member name="P:Scheduler.DataRequest.SchedulerRequest.MonthlyRequest">
+            <summary>
+            Contains the Monthly request properties
+            </summary>
+        </member>
+        <member name="P:Scheduler.DataRequest.SchedulerRequest.YearlyRequest">
+            <summary>
+            Contains the Yearly request properties
+            </summary>
+        </member>
+        <member name="T:Scheduler.DataRequest.WeeklyRequest">
+            <summary>
+            Contains the properties for a weekly request
+            </summary>
+        </member>
+        <member name="F:Scheduler.DataRequest.WeeklyRequest.SelectedDayOfWeekValues">
+            <summary>
+            Selected days of week values
+            </summary>
+        </member>
+        <member name="P:Scheduler.DataRequest.WeeklyRequest.EveryXWeeks">
+            <summary>
+            Every X Weeks
+            </summary>
+        </member>
+        <member name="T:Scheduler.DataRequest.YearlyPattern">
+            <summary>
+            Contains the input request values for a yearly request
+            </summary>
+        </member>
+        <member name="P:Scheduler.DataRequest.YearlyPattern.DayNo">
+            <summary>
+            Day No
+            </summary>
+        </member>
+        <member name="P:Scheduler.DataRequest.YearlyPattern.Month">
+            <summary>
+            Month value
+            </summary>
+        </member>
+        <member name="P:Scheduler.DataRequest.YearlyPattern.EveryXYears">
+            <summary>
+            Every X Years
+            </summary>
+        </member>
+        <member name="T:Scheduler.DataRequest.YearlyRelativePattern">
+            <summary>
+            Contains the properties for a yearly relative request
+            </summary>
+        </member>
+        <member name="P:Scheduler.DataRequest.YearlyRelativePattern.FrequencyRelative">
+            <summary>
+            Frequency relative
+            FrequencyRelativeInterval {  First=1, Second=2, Third=4, Fourth=8, Fifth = 16,Last=32 };
+            </summary>
+        </member>
+        <member name="P:Scheduler.DataRequest.YearlyRelativePattern.FrequencyDayValue">
+            <summary>
+            FrequencyDaysValue
+            FrequencyDaysValue {  Sunday = 1, Monday =2, Tuesday=3, Wednesday=4, Thursday=5, Friday=6, Saturday=7, Day=8, Weekday=9, WeekendDay=10, };
+            </summary>
+        </member>
+        <member name="P:Scheduler.DataRequest.YearlyRelativePattern.FrequencyMonthValue">
+            <summary>
+            FrequencyMonthValue {  January = 1, February, March, April, May, June, July, August, September, October, November, December };
+            </summary>
+        </member>
+        <member name="P:Scheduler.DataRequest.YearlyRelativePattern.EveryXYears">
+            <summary>
+            Every X Years
+            </summary>
+        </member>
+        <member name="T:Scheduler.DataRequest.SchedulerResponse">
+            <summary>
+            Class used to pass the recurrence values back to developer
+            </summary>
+        </member>
+        <member name="P:Scheduler.DataRequest.SchedulerResponse.Values">
+            <summary>
+            List of Date Time values
+            </summary>
+        </member>
+        <member name="P:Scheduler.DataRequest.SchedulerResponse.LastDate">
+            <summary>
+            Last date from the values
+            </summary>
+        </member>
+        <member name="T:Scheduler.Logic.DailyRecurrenceSettings">
+            <summary>
+            Represent the logic behind the Daily Recurrence request
+            </summary>
+        </member>
+        <member name="P:Scheduler.Logic.RecurrenceSettings.TypeOfEndDate">
+            <summary>
+                Get/Set the type of End Date. Occurrences, End Date, or no end date at all.
+            </summary>
+            <value>
+                <para>
+                    EndDateType enumeration.
+                </para>
+            </value>
+            <remarks>
+                
+            </remarks>
+        </member>
+        <member name="P:Scheduler.Logic.RecurrenceSettings.RegenerationAfterCompletedInterval">
+            <summary>
+            Regenerate the Occurrence x-amount of days, weeks, etc. 
+            after the current item is completed.
+            </summary>
+        </member>
+        <member name="P:Scheduler.Logic.RecurrenceSettings.HasEndDate">
+            <summary>
+            Readonly bool if this recurrence instance
+            has an End date or note. If it does not then
+            it means this instance has no ending date and should
+            only create one IRecurrenceItem object.
+            </summary>
+        </member>
+        <member name="P:Scheduler.Logic.RecurrenceSettings.EndDate">
+            <summary>
+                End Date for the recurrence values.
+            </summary>
+            <value>
+                <para>
+                    DateTime value.
+                </para>
+            </value>
+            <remarks>
+                
+            </remarks>
+        </member>
+        <member name="P:Scheduler.Logic.RecurrenceSettings.StartDate">
+            <summary>
+                Start Date of the rucurence Values.
+            </summary>
+            <value>
+                <para>
+                    DateTime value.
+                </para>
+            </value>
+            <remarks>
+                
+            </remarks>
+        </member>
+        <member name="P:Scheduler.Logic.RecurrenceSettings.RecurrenceInterval">
+            <summary>
+            This is the "Recurr every x-amount of Days, Weeks.
+            </summary>
+        </member>
+        <member name="M:Scheduler.Logic.DailyRecurrenceSettings.#ctor(System.DateTime,System.Int32)">
+            <summary>
+            Get dates by Start date only. This is for no ending date values.
+            </summary>
+            <param name="startDate"></param>
+        </member>
+        <member name="M:Scheduler.Logic.DailyRecurrenceSettings.#ctor(System.DateTime,System.DateTime,System.Int32)">
+            <summary>
+            Get dates by Start and End date boundries.
+            </summary>
+            <param name="startDate"></param>
+            <param name="endDate"></param>
+        </member>
+        <member name="M:Scheduler.Logic.DailyRecurrenceSettings.#ctor(System.DateTime,System.Int32,System.Int32)">
+            <summary>
+            Get dates by Start date and number of occurrences.
+            </summary>
+            <param name="startDate"></param>
+            <param name="numberOfOccurrences"></param>
+        </member>
+        <member name="M:Scheduler.Logic.DailyRecurrenceSettings.GetValues(System.Int32)">
+            <summary>
+            Get day values. This overload is for every x-days.
+            </summary>
+            <param name="regenEveryXDays">Interval of days. Every x-days.</param>
+            <returns>RecurrenceValues</returns>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:Scheduler.Logic.DailyRecurrenceSettings.GetValues(System.Int32,Scheduler.DataRequest.DailyType)" -->
+        <member name="M:Scheduler.Logic.DailyRecurrenceSettings.GetValues">
+            <summary>
+            Get day values. Default is to get every weekday. This is called from the RecurrenceHelper staic methods only.
+            </summary>
+            <returns>RecurrenceValues</returns>
+        </member>
+        <member name="M:Scheduler.Logic.DailyRecurrenceSettings.GetEveryWeekday">
+            <summary>
+            Get the values for just weekdays.
+            </summary>
+            <returns>RecurrenceValues</returns>
+        </member>
+        <member name="M:Scheduler.Logic.DailyRecurrenceSettings.GetNextWeekday(System.DateTime)">
+            <summary>
+            Get the next Weekday value. This will increment the input date until it finds the next non-Saturday and non-Sunday dates.
+            </summary>
+            <param name="input"></param>
+            <returns>DateTime</returns>
+        </member>
+        <member name="M:Scheduler.Logic.DailyRecurrenceSettings.GetEveryXDaysValues">
+            <summary>
+            Get dates for every x-days starting from the start date.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:Scheduler.Logic.DailyRecurrenceSettings.RegenEveryXDays">
+            <summary>
+            What is the interval to generate dates. This is used to skip days in the cycle.
+            </summary>
+        </member>
+        <member name="P:Scheduler.Logic.DailyRecurrenceSettings.RegenType">
+            <summary>
+            What is the regeneration type such as Specific day of month, custom date, etc.
+            </summary>
+        </member>
+        <member name="T:Scheduler.DataRequest.RecurrenceType">
+            <summary>
+            Enumeration used by the scheduler logic classes in order to return the recurring dates
+            </summary>
+        </member>
+        <member name="T:Scheduler.DataRequest.IntervalPattern">
+            <summary>
+            Enumeration used to pass the recurring interval to the Sceduler.Logic
+            </summary>
+        </member>
+        <member name="T:Scheduler.DataRequest.FrequenceType">
+            <summary>
+            Enumeration which contains the frequency values
+            Contains all the possible scheduler request types
+            </summary>
+        </member>
+        <member name="T:Scheduler.DataRequest.DailyType">
+            <summary>
+            Enumeration containing the possible daily request
+            </summary>
+        </member>
+        <member name="T:Scheduler.DataRequest.DayEnum">
+            <summary>
+            Enumeration of the days and it is used only for a weekly request
+            </summary>
+        </member>
+        <member name="T:Scheduler.DataRequest.WeeklyType">
+            <summary>
+            The Regeneration type. 
+            </summary>
+        </member>
+        <member name="T:Scheduler.DataRequest.SelectedDayOfWeekValues">
+            <summary>
+            Structure used to store the selected days for a weekly request
+            </summary>
+        </member>
+        <member name="T:Scheduler.DataRequest.MonthlyType">
+            <summary>
+            Contains the possible values for a monthly request
+            MonthlyType { NotSet = -1, Monthly = 16, MonthlyRelative = 32 }
+            </summary>
+        </member>
+        <member name="T:Scheduler.DataRequest.FrequencyRelativeInterval">
+            <summary>
+            Contains the relative criteria for a MOnthly or Yearly request. This would be First, Second, etc. item of the month.
+            </summary>
+        </member>
+        <member name="T:Scheduler.DataRequest.FrequencyDaysValue">
+            <summary>
+            Second part of a custom date. This is day of week, weekend day, etc.
+            </summary>
+        </member>
+        <member name="T:Scheduler.DataRequest.YearlyType">
+            <summary>
+            Represent the Yearly type sent to the Scheduler.Logic
+            </summary>
+        </member>
+        <member name="T:Scheduler.DataRequest.FrequencyMonthValue">
+            <summary>
+            Used for a yearly request. This is the Month of the year for which the custom date confines to..
+            The value of this enum matches the ordinal position of the given month. So Jan = 1, Feb = 2, etc.
+            </summary>
+        </member>
+        <member name="T:Scheduler.Logic.MonthlyRecurrenceSettings">
+            <summary>
+            Represent the logic behind the  Monthly Recurrence request
+            </summary>
+        </member>
+        <member name="M:Scheduler.Logic.MonthlyRecurrenceSettings.#ctor(System.DateTime,System.Int32)">
+            <summary>
+            Get dates by Start date only. This is for no ending date values.
+            </summary>
+            <param name="startDate"></param>
+        </member>
+        <member name="M:Scheduler.Logic.MonthlyRecurrenceSettings.#ctor(System.DateTime,System.DateTime,System.Int32)">
+            <summary>
+            Get dates by Start and End date boundries.
+            </summary>
+            <param name="startDate"></param>
+            <param name="endDate"></param>
+        </member>
+        <member name="M:Scheduler.Logic.MonthlyRecurrenceSettings.#ctor(System.DateTime,System.Int32,System.Int32)">
+            <summary>
+            Get dates by Start date and number of occurrences.
+            </summary>
+            <param name="startDate"></param>
+            <param name="numberOfOccurrences"></param>
+        </member>
+        <member name="M:Scheduler.Logic.MonthlyRecurrenceSettings.GetSpecificDayOfMonthDates">
+            <summary>
+            Get recurring dates from a specific constant date such as 27 July.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Scheduler.Logic.MonthlyRecurrenceSettings.GetCorrectedDate(System.DateTime)">
+            <summary>
+            Correct an input date to be equal to or less than the specified day value.
+            </summary>
+            <param name="input">Date to check to ensure it matches the specified day value or the max number of days for that month, whichever comes first.</param>
+            <returns>DateTime</returns>
+        </member>
+        <member name="M:Scheduler.Logic.MonthlyRecurrenceSettings.GetCustomDayOfMonthDates">
+            <summary>
+            Get recurring dates from custom date such as First Sunday of July.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Scheduler.Logic.MonthlyRecurrenceSettings.GetCustomDate(System.DateTime)">
+            <summary>
+            Get the custom value from the 1st, 2nd, and 3rd custom date parts
+            </summary>
+            <param name="year"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Scheduler.Logic.MonthlyRecurrenceSettings.GetValues(Scheduler.DataRequest.FrequencyRelativeInterval,Scheduler.DataRequest.FrequencyDaysValue,System.Int32)">
+            <summary>
+            Get Custom dates such as Last Saturday of the month with option as to the increment of every x-months.
+            </summary>
+            <param name="customDatePartOne">Corresponds to Part of month such as First, Last.</param>
+            <param name="customDatePartTwo">Corresponds to day of the week to get such as Tuesday or Weekend Day.</param>
+            <param name="regenEveryXMonths">How many months to skip, such as 2 for every other month.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Scheduler.Logic.MonthlyRecurrenceSettings.GetValues(System.Int32,System.Int32)">
+            <summary>
+            Get values for a specific day of the month. Eg. Every 23rd day. With option to get every x-month.
+            </summary>
+            <param name="dayOfMonthToRegen">Day of month you want to set as the value to get from month to month.</param>
+            <param name="regenEveryXMonths">How many months to skip, such as 2 for every other month.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Scheduler.Logic.MonthlyRecurrenceSettings.GetValues">
+            <summary>
+                 Final overloaded function that gets the Recurrence Values. 
+                 This is called from the RecurrenceHelper staic methods only.
+            </summary>
+            <returns>
+                A RecurrenceGenerator.RecurrenceValues value...
+            </returns>
+        </member>
+        <member name="P:Scheduler.Logic.MonthlyRecurrenceSettings.SpecificDatePartOne">
+            <summary>
+            What is the first part to the Custom date such as First, Last.
+            </summary>
+        </member>
+        <member name="P:Scheduler.Logic.MonthlyRecurrenceSettings.SpecificDatePartTwo">
+            <summary>
+            What is the second part to the Custom date such as which weekday, weekend day, etc.
+            </summary>
+        </member>
+        <member name="P:Scheduler.Logic.MonthlyRecurrenceSettings.RegenType">
+            <summary>
+            What is the regeneration type such as Specific day of month, custom date, etc.
+            </summary>
+        </member>
+        <member name="P:Scheduler.Logic.MonthlyRecurrenceSettings.RegenerateOnSpecificDateDayValue">
+            <summary>
+             Day of month to regenerate when RegenType = specific day of month.
+            </summary>
+        </member>
+        <member name="P:Scheduler.Logic.MonthlyRecurrenceSettings.AdjustmentValue">
+            <summary>
+            Used to adjust the date plus/minus x-days
+            </summary>
+        </member>
+        <member name="P:Scheduler.Logic.MonthlyRecurrenceSettings.RegenEveryXMonths">
+            <summary>
+            What is the interval to generate dates. This is used to skip months in the cycle.
+            </summary>
+        </member>
+        <member name="T:Scheduler.Logic.RecurrenceValues">
+            <summary>
+            Represent the internal list of recurrence values obtained from the logic classes
+            </summary>
+        </member>
+        <member name="M:Scheduler.Logic.RecurrenceValues.AddDateValue(System.DateTime)">
+            <summary>
+            Add a date to the List of Values. 
+            </summary>
+            <param name="recurrenceDate"></param>
+        </member>
+        <member name="M:Scheduler.Logic.RecurrenceValues.AddDateValue(System.DateTime,System.Int32)">
+            <summary>
+            Add a date to the List of Values adjusting it with the plus/minus x-days value
+            </summary>
+            <param name="recurrenceDate"></param>
+            <param name="adjustedValue"></param>
+        </member>
+        <member name="M:Scheduler.Logic.RecurrenceValues.SetStartDate(System.DateTime)">
+            <summary>
+                Set the Start Date. Only accessable from this assembly 
+                and usually set when trying to get the next date or 
+                an existing set of dates.
+            </summary>
+            <param name="startingDate" type="System.DateTime">
+                <para>
+                    
+                </para>
+            </param>
+        </member>
+        <member name="M:Scheduler.Logic.RecurrenceValues.SetSeriesInfo(System.String)">
+            <summary>
+                Set the SeriesInfo. Only accessable from this assembly 
+                and usually set when trying to get the next date or 
+                an existing set of dates.
+            </summary>
+            <param name="seriesInfo" type="string">
+                <para>
+                    
+                </para>
+            </param>
+        </member>
+        <member name="M:Scheduler.Logic.RecurrenceValues.SetEndDate(System.DateTime)">
+            <summary>
+                Set the End Date. Only accessable from this assembly 
+                and usually set when trying to get the next date or 
+                an existing set of dates.
+            </summary>
+            <param name="endingDate" type="System.DateTime">
+                <para>
+                    
+                </para>
+            </param>
+        </member>
+        <member name="M:Scheduler.Logic.RecurrenceValues.GetSeriesInfo">
+            <summary>
+            Series Information contained in a coded string.
+            </summary>
+        </member>
+        <!-- Badly formed XML comment ignored for member "P:Scheduler.Logic.RecurrenceValues.Values" -->
+        <member name="P:Scheduler.Logic.RecurrenceValues.StartDate">
+            <summary>
+                Readonly Start Date value. This is the first date of the recurring values.
+            </summary>
+            <value>
+                <para>
+                    
+                </para>
+            </value>
+            <remarks>
+                
+            </remarks>
+        </member>
+        <member name="P:Scheduler.Logic.RecurrenceValues.EndDate">
+            <summary>
+                Readonly End Date value. This is the last date in the recurring values.
+            </summary>
+            <value>
+                <para>
+                    
+                </para>
+            </value>
+            <remarks>
+                
+            </remarks>
+        </member>
+        <member name="T:Scheduler.Logic.WeeklyRecurrenceSettings">
+            <summary>
+            Represent the logic behind the Weekly Recurrence request
+            </summary>
+        </member>
+        <member name="M:Scheduler.Logic.WeeklyRecurrenceSettings.#ctor(System.DateTime,System.Int32)">
+            <summary>
+            Get dates by Start date only. This is for no ending date values.
+            </summary>
+            <param name="startDate"></param>
+        </member>
+        <member name="M:Scheduler.Logic.WeeklyRecurrenceSettings.#ctor(System.DateTime,System.DateTime,System.Int32)">
+            <summary>
+            Get dates by Start and End date boundries.
+            </summary>
+            <param name="startDate"></param>
+            <param name="endDate"></param>
+        </member>
+        <member name="M:Scheduler.Logic.WeeklyRecurrenceSettings.#ctor(System.DateTime,System.Int32,System.Int32)">
+            <summary>
+            Get dates by Start date and number of occurrences.
+            </summary>
+            <param name="startDate"></param>
+            <param name="numberOfOccurrences"></param>
+        </member>
+        <member name="M:Scheduler.Logic.WeeklyRecurrenceSettings.GetValues(System.Int32,Scheduler.DataRequest.SelectedDayOfWeekValues)">
+            <summary>
+            Get day values. This overload is for every x-weeks.
+            </summary>
+            <param name="regenEveryXDays">Interval of weeks. Every x-weeks.</param>
+            <returns>RecurrenceValues</returns>
+        </member>
+        <member name="M:Scheduler.Logic.WeeklyRecurrenceSettings.GetValues">
+            <summary>
+                Final overloaded function that gets the Recurrence Values. 
+                This is called from the RecurrenceHelper staic methods only.
+            </summary>
+            <returns>
+                A RecurrenceGenerator.RecurrenceValues value...
+            </returns>
+        </member>
+        <member name="M:Scheduler.Logic.WeeklyRecurrenceSettings.SetValues(System.Int32,Scheduler.DataRequest.SelectedDayOfWeekValues)">
+            <summary>
+            Set the values in preperation for getting the Next date in the series.
+            </summary>
+            <param name="regenEveryXWeeks">Value to regenerate the dates every x-weeks</param>
+            <param name="selectedDays">Struct of days selected for the week.</param>
+        </member>
+        <member name="P:Scheduler.Logic.WeeklyRecurrenceSettings.RegenEveryXWeeks">
+            <summary>
+            What is the interval to generate dates. This is used to skip weeks in the cycle.
+            </summary>
+        </member>
+        <member name="P:Scheduler.Logic.WeeklyRecurrenceSettings.RegenType">
+            <summary>
+            What is the regeneration type such as Specific day of month, custom date, etc.
+            </summary>
+        </member>
+        <member name="T:Scheduler.Logic.YearlyRecurrenceSettings">
+            <summary>
+            Represent the logic behind the Yearly Recurrence request
+            </summary>
+        </member>
+        <member name="M:Scheduler.Logic.YearlyRecurrenceSettings.#ctor(System.DateTime,System.Int32)">
+            <summary>
+            Get dates by Start date only. This is for no ending date values.
+            </summary>
+            <param name="startDate"></param>
+        </member>
+        <member name="M:Scheduler.Logic.YearlyRecurrenceSettings.#ctor(System.DateTime,System.DateTime,System.Int32)">
+            <summary>
+            Get dates by Start and End date boundries.
+            </summary>
+            <param name="startDate"></param>
+            <param name="endDate"></param>
+        </member>
+        <member name="M:Scheduler.Logic.YearlyRecurrenceSettings.#ctor(System.DateTime,System.Int32,System.Int32)">
+            <summary>
+            Get dates by Start date and number of occurrences.
+            </summary>
+            <param name="startDate"></param>
+            <param name="numberOfOccurrences"></param>
+        </member>
+        <member name="M:Scheduler.Logic.YearlyRecurrenceSettings.GetValues(System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Get dates for a specific day and month of the year.
+            </summary>
+            <param name="specificDateDayValue">Day of the month.</param>
+            <param name="specificDateMonthValue">Month of the year.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Scheduler.Logic.YearlyRecurrenceSettings.GetValues(Scheduler.DataRequest.FrequencyRelativeInterval,Scheduler.DataRequest.FrequencyDaysValue,Scheduler.DataRequest.FrequencyMonthValue,System.Int32)">
+            <summary>
+            Get dates for a custom formatted date such as First weekend day of July.
+            </summary>
+            <param name="customDateFirstPart"></param>
+            <param name="customDateSecondPart"></param>
+            <param name="customDateThirdPart"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Scheduler.Logic.YearlyRecurrenceSettings.GetValues">
+            <summary>
+                Final overloaded function that gets the Recurrence Values. 
+                This is called from the RecurrenceHelper staic methods only.
+            </summary>
+            <returns>
+                A RecurrenceGenerator.RecurrenceValues value...
+            </returns>
+        </member>
+        <member name="M:Scheduler.Logic.YearlyRecurrenceSettings.GetSpecificDayOfYearDates">
+            <summary>
+            Get recurring dates from a specific constant date such as 27 July.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Scheduler.Logic.YearlyRecurrenceSettings.GetCorrectedDate(System.DateTime)">
+            <summary>
+            Correct an input date to be equal to or less than the specified day value.
+            </summary>
+            <param name="input">Date to check to ensure it matches the specified day value or the max number of days for that month, whichever comes first.</param>
+            <returns>DateTime</returns>
+        </member>
+        <member name="M:Scheduler.Logic.YearlyRecurrenceSettings.GetCustomDayOfYearDates">
+            <summary>
+            Get recurring dates from custom date such as First Sunday of July.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Scheduler.Logic.YearlyRecurrenceSettings.GetCustomDate(System.Int32)">
+            <summary>
+            Get the custom value from the 1st, 2nd, and 3rd custom date parts
+            </summary>
+            <param name="year"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Scheduler.Logic.YearlyRecurrenceSettings.FrequencyMonthValue">
+            <summary>
+            Part of the Custom date that equates to the month of year.
+            </summary>
+        </member>
+        <member name="P:Scheduler.Logic.YearlyRecurrenceSettings.FrequencyDaysValue">
+            <summary>
+            Part of the Custom date that is the day part of the month such as weekend day, Tuesday, Wednesday, weekday, etc.
+            </summary>
+        </member>
+        <member name="P:Scheduler.Logic.YearlyRecurrenceSettings.FrequencyRelative">
+            <summary>
+            Part of the Custom date that is the part to get such as First, Second, Last, etc.
+            </summary>
+        </member>
+        <member name="P:Scheduler.Logic.YearlyRecurrenceSettings.RegenType">
+            <summary>
+            Regeneration type such as by Specific day of the year, Custom date, etc.
+            </summary>
+        </member>
+        <member name="P:Scheduler.Logic.YearlyRecurrenceSettings.RegenerateOnSpecificDateDayValue">
+            <summary>
+            What day of the month do you want to regenerate dates when by a specific day of the year.
+            </summary>
+        </member>
+        <member name="P:Scheduler.Logic.YearlyRecurrenceSettings.RegenerateOnSpecificDateMonthValue">
+            <summary>
+            What month of the year do you want to regenerate dates when by a specific day of the year.
+            </summary>
+        </member>
+        <member name="P:Scheduler.Logic.YearlyRecurrenceSettings.AdjustmentValue">
+            <summary>
+            Used to adjust the date plus/minus x-days
+            </summary>
+        </member>
+        <member name="T:SchedulerEngine.SchedulerEngineManager">
+            <summary>
+            Represent the class used by developers in order to retreive the recurrence information
+            </summary>
+        </member>
+        <member name="M:SchedulerEngine.SchedulerEngineManager.Once">
+            <summary>
+            Represent a Once request
+            returns only the workdays values
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SchedulerEngine.SchedulerEngineManager.Daily">
+            <summary>
+            Represent a daily request
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SchedulerEngine.SchedulerEngineManager.Weekly">
+            <summary>
+            Represent a weekly request
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SchedulerEngine.SchedulerEngineManager.Monthly">
+            <summary>
+            Represent a Monthly request
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SchedulerEngine.SchedulerEngineManager.MonthlyRelative">
+            <summary>
+            Represent a Monthly relative request
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SchedulerEngine.SchedulerEngineManager.Yearly">
+            <summary>
+            Represent a Yearly request
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SchedulerEngine.SchedulerEngineManager.YearlyRelative">
+            <summary>
+            Represent a Yearly relative request
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SchedulerEngine.SchedulerEngineManager.GetRecurrenceValues(System.String)">
+            <summary>
+            Returns the recurrence values based on a previous request which was saved as a XML structure
+            </summary>
+            <param name="previousRequest"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SchedulerEngine.SchedulerEngineManager.GetRecurrenceValues(Scheduler.DataRequest.SchedulerIntervals,Scheduler.DataRequest.FrequenceType,System.Int32,Scheduler.DataRequest.FrequencyRelativeInterval,System.Int32,System.Int32)">
+            <summary>
+            Get the recurrence values for a call as Microsoft 
+            See http://msdn.microsoft.com/en-us/library/ms366342.aspx as a reference
+            The Scheduler Intervals are sent by developer
+            </summary>
+            <param name="intervals"></param>
+            <param name="frequencyType"></param>
+            <param name="frequencyInterval"></param>
+            <param name="frequencyRelativeInterval"></param>
+            <param name="frequencyRecurrenceFactor"></param>
+            <param name="yearRelativeXYears"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SchedulerEngine.SchedulerEngineManager.GetRecurrenceValues(Scheduler.DataRequest.FrequenceType,System.Int32,Scheduler.DataRequest.FrequencyRelativeInterval,System.Int32,System.Int32,System.DateTime,System.Nullable{System.DateTime},System.Int32)">
+            <summary>
+            Get the recurence values in the same way as Microsoft
+            See http://msdn.microsoft.com/en-us/library/ms366342.aspx as a reference
+            </summary>
+            <param name="frequencyType"></param>
+            <param name="frequencyInterval"></param>
+            <param name="frequencyRelative"></param>
+            <param name="frequencyRecurrenceFactor"></param>
+            <param name="yearRelativeXYears"></param>
+            <param name="startDate"></param>
+            <param name="endDate"></param>
+            <param name="occurenceNo"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

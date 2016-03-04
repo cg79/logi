@@ -1,0 +1,8 @@
+<div ng-repeat="field in gridColumns">
+    {{field.FriendlyName}}ll
+    <select ng-model="field.Filter.filterOptionID" class="form-control input-sm"
+            ng-options="it.Index as it.Name for it in field.Filter.criterias"></select>
+
+    <input type="text" ng-model="field.Filter.inputValue" />
+</div>
+<input type="button" ng-click="filter()" value="Filter" />

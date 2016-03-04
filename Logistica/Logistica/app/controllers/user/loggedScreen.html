@@ -1,0 +1,23 @@
+<div  ng-controller="LoginController">
+	<div class="row">
+		{{user}}
+		<img src="{{user.uiImage}}" alt="" class="img-circle img30_30 thumb" ng-click="chooseAvatar()">
+		<span class="dropdown" dropdown >
+			<a href class="dropdown-toggle" dropdown-toggle>
+				{{user.name}}
+			</a>
+			<ul class="dropdown-menu">
+				<li>
+					<a ng-click="logOut()">LogOut</a>
+				</li>
+			</ul>
+		</span>
+		<form id="fileUploadForm" method="post" enctype="multipart/form-data">
+			<div class="hide">
+				<input id="fileupload" type="file" ng-file-select="" ng-model="picFile" name="files[]" accept="image/*" ng-file-change="generateThumb(picFile[0], $files)" class="hide ng-pristine ng-untouched ng-valid ng-valid-required"
+				required=""/>
+			</div>
+		</form>
+		<span ng-click="logOut()">LogOut</span>
+	</div>
+</div>

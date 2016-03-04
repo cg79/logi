@@ -1,0 +1,64 @@
+   
+    <h1> masini
+    
+    </h1>  
+
+    <div class="clearfix"><br /></div>
+  
+<<button type="button" class="btn btn-default" ng-click="editMyCar()">button</button>
+
+
+ <div class="col-md-6">
+     <gene ng-click=""ric-filter grid-columns="CarListGridColumns"  search-text="searchTextRole"  exec-filter="triggerRoleFilter()"></generic-filter>
+   </div>
+
+    <div class="clearfix"><br /></div>
+
+
+
+   <div class="table-container">
+   <table st-table="CarLists"   st-pagination-scroll  st-pipe="callServer" class="table table-striped table-hover table-bordered">
+	<thead>
+		<tr>
+			<!--<th width="10%">Selection</th>-->
+        	<th width="75%" lr-drag-src="headers" lr-drop-target="headers" ng-repeat="col in CarListGridColumns" st-sort="{{col.Name}}" sortchanged="sortChangedRole(col.Name,sortDirection)">{{col.FriendlyName}}</th>
+            <th width="25%" style="text-align:center">Actions</th>
+    	</tr>
+	    
+    </thead>
+
+       <!--ng-click="roleSelected(row)"-->
+	<tbody>
+		<tr ng-repeat="row in CarLists"  class={{row.selection()}}>
+
+			<!--<td><input type="checkbox" ng-model="row.Selected"></td>-->
+			 <td ng-repeat="col in CarListGridColumns">{{row[col.Name]}}</td>
+
+			 <td> <span ng-click="editMyCar(row)">Edit</span> </td>
+		</tr>
+	</tbody>
+</table>
+
+       <div class="col-md-12 text-center">
+               
+
+           <jq-pager total-items="CarListsPager.Pager.totalServerItems"
+                     page-index="CarListsPager.Pager.currentPage"
+                     items-per-page="CarListsPager.Pager.pageSize">
+           </jq-pager>
+       </div>
+</div>
+
+	
+
+           
+
+
+
+    
+
+
+    
+
+
+    

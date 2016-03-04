@@ -1,0 +1,23 @@
+﻿<div ng-controller="MapPointsController">
+    <div class="panel panel-default">
+        <div class="panel-body form-horizontal payment-form">
+            <div class="form-group">
+                <map zoom="11" center="[40.74, -74.18]"></map>
+            </div>
+            <ul>
+                <li ng-repeat="x in input.route.getWayPoints()">
+                    <span ng-click=cityRoutePointClick($event,x)>{{ x.address.toString() }}</span>
+                    <span>{{ x.marker.selected }}</span>
+                    <a href="#" ng-click="removeWaypoint($event,x)">Delete</a>
+                </li>
+            </ul>
+
+            <!--<div class="form-group">
+                <button type="button" class="btn btn-primary" ng-click="closeRouteDlgWithYes()">
+                    Single Toggle11
+                </button>
+
+            </div>-->
+        </div>
+    </div>
+</div>

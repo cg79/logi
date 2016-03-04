@@ -1,0 +1,60 @@
+﻿<div  ng-controller="LoginController">
+{{input}}
+
+	<div class="panel-body my">
+		<ng-form name="loginForm" class="form-horizontal" novalidate>
+		<div class="row ">
+			<div class="col-xs-3">
+				<input type="button" class="btn btn-primary" value="{{ui.ID_CREATE_USER}}" ng-click="GoToCreateUser()">
+			</div>
+
+			<div class="col-xs-3">
+				<div class="input-group">
+					<span class="input-group-addon"><i class="fa fa-user"></i></span>
+					<input type="text" class="form-control" name="username" value="" tabindex="1" ui-keypress="{13:'execLogin()'}" placeholder="{{ui.ID_LOGIN}}" ng-model="input.Login" required>
+				</div>
+				<p ng-show="loginForm.username.$invalid && !loginForm.username.$pristine" class="has-error">{{ui.ID_USER_NAME_REQUIRED}}</p>
+			</div>
+
+			<div class="col-xs-3">
+				<div class="input-group">
+					<span class="input-group-addon"><i class="fa fa-lock"></i></span>
+					<input id="login-password" type="password" class="form-control" name="password" tabindex="2" ui-keypress="{13:'execLogin()'}" placeholder="{{ui.ID_PASSWORD}}" ng-model="input.Password" required>
+				</div>
+			</div>
+
+			<div class="col-xs-3">
+				<div class="input-group">
+					
+					<button type="button" class="btn btn-primary" ng-click="UILogin()">{{ui.ID_LOGIN}}</button>
+				</div>
+			</div>
+		</div>
+		<div class="row form-group">
+			<div class="col-xs-3">
+						
+					</div>
+			<div class="col-xs-3">
+						<input id="chkRemember" type="checkbox" ng-model="input.RememberMe"> <label for="chkRemember">{{ui.ID_REM_PASS}}</label>
+					</div>
+					<div class="col-xs-3">
+						<a ng-click=navigateTo("/user/forgotPassword")>{{ui.ID_FORGOT_PASSWORD}}</a>
+					</div>
+					<div class="col-xs-3">
+						<label class="error">{{input.ServerMessage}}</label>
+					</div>
+		</div>
+		
+		</ng-form>
+		
+	</div>
+	
+</div>
+	
+
+
+
+
+
+
+

@@ -1,0 +1,12 @@
+<div >
+	<label>{{label}}</label>
+	<div class='dropdown'> 
+		<button class='btn btn-default dropdown-toggle' type='button' id='serviceOptions' data-toggle='dropdown' aria-expanded='true'> {{selectModel['name'] || "PLEASE SELECT"}}<span class='caret'></span> 
+		</button>
+		<ul class='dropdown-menu' role='menu' aria-labelledby='serviceOptions'> 
+		  <li role='presentation' ng-repeat="elm in elements track by $index">
+		    <a role='menuitem' tabindex='-1' href='' ng-click="applyElementSelection(elm)">{{elm.name}}</a>
+		  </li>
+		</ul> 
+	</div> 
+</div>

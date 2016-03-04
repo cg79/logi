@@ -1,0 +1,100 @@
+﻿{{input}}
+<span ng-clik="sss()">sss</span>
+<tabset>
+<tab>
+<tab-heading>
+<i class="glyphicon glyphicon-bell"></i> Logare
+</tab-heading>
+<div class="tab-pane" >
+	<div class="panel-body my">
+		<ng-form name="loginForm" class="form-horizontal form-group" novalidate>
+		<div class="row form-group">
+			<div class="col-xs-3">
+				<div class="input-group">
+					<span class="input-group-addon"><i class="fa fa-user"></i></span>
+					<input type="text" class="form-control" name="username" value="" tabindex="1" ui-keypress="{13:'execLogin()'}" placeholder="{{ui.ID_LOGIN}}" ng-model="input.Login" required>
+				</div>
+				<p ng-show="loginForm.username.$invalid && !loginForm.username.$pristine" class="has-error">{{ui.ID_USER_NAME_REQUIRED}}</p>
+			</div>
+			<div class="col-xs-3">
+			<input type="button" class="btn btn-primary" value="{{ui.ID_CREATE_USER}}" ng-click="GoToCreateUser()">
+			</div>
+		</div>
+		<div class="row form-group">
+			<div class="col-xs-3">
+				<div class="input-group">
+					<span class="input-group-addon"><i class="fa fa-lock"></i></span>
+					<input id="login-password" type="password" class="form-control" name="password" tabindex="2" ui-keypress="{13:'execLogin()'}" placeholder="{{ui.ID_PASSWORD}}" ng-model="input.Password" required>
+				</div>
+			</div>
+			<div class="col-xs-3">
+				<div class="input-group">
+					
+					<!-- Split button -->
+					<div class="btn-group" dropdown>
+						<button type="button" class="btn btn-primary" ng-click="UILogin()">{{ui.ID_LOGIN}}</button>
+						<button type="button" class="btn btn-primary dropdown-toggle" dropdown-toggle>
+						<span class="caret"></span>
+						<span class="sr-only">Split button!</span>
+						</button>
+						<ul class="dropdown-menu" role="menu">
+							<li><span ng-click="fbLogin()">{{ui.ID_LOGIN_FB}}</span></li>
+							<li><fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
+								</fb:login-button>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<div class="row form-group">
+			<div class="col-md-12">
+				<div>
+					<div class="col-xs-3">
+						<input id="chkRemember" type="checkbox" ng-model="input.RememberMe"> <label for="chkRemember">{{ui.ID_REM_PASS}}</label>
+					</div>
+					
+					<div class="col-xs-3">
+						<label class="error">{{input.ServerMessage}}</label>
+					</div>
+					
+				</div>
+			</div>
+		</div>
+		
+	</div>
+	</ng-form>
+</div>
+</tab>
+<tab>
+<tab-heading>
+<i class="glyphicon glyphicon-bell"></i> Reamintire parola!
+</tab-heading>
+<div class="tab-pane" >
+	
+
+<ng-form name="frmReset"  novalidate>
+	<div class="panel-body my">
+	<div class="container col-xs-5">
+		<div class="row form-group" >
+			<label for="txtEmail">Adresa de email</label>
+			<input type="email" name="txtEmail" id="txtEmail" class="form-control" required="required" ng-model="input.Email">
+			<input type="button" class="btn btn-primary" value ="{{ui.ID_REMEMBER_PASSWORD}}" ng-click="SendResetPasswordEmail()"/>
+		</div>
+		<p class="error" ng-show="frmReset.txtEmail.$error.required">Required!</p>
+		<p class="error" ng-show="frmReset.txtEmail.$error.email">{{ui.ID_EMAIL_INVALID}}</p>
+		<p class="error">{{input.ResetEmail}}</p>
+
+		<input type="button" class="btn btn-primary" value ="{{ui.ID_REMEMBER_PASSWORD}}" ng-click="GoToResetPassword()"/>
+		
+	</div>
+</div>
+</ng-form>
+</div>
+</tab>
+</tabset>
+
+
+
+

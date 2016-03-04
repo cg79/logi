@@ -1,0 +1,81 @@
+﻿<select ng-model="travelMode" ng-init="travelMode='DRIVING'">
+    <option value="DRIVING">Driving</option>
+    <option value="WALKING">Walking</option>
+    <option value="BICYCLING">Bicycling</option>
+    <option value="TRANSIT">Transit</option>
+</select>
+<div class="panel panel-default">
+    <div class="panel-body form-horizontal payment-form">
+
+        <div class="row">
+            <div class="col-sm-7">
+                <div class="form-group ">
+                    <label for="concept" class="col-sm-3 control-label">Start location</label>
+                    <div class="col-sm-4">
+                        <input type="text" google-places location=input.route.start></input>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="description" class="col-sm-3 control-label">End Location</label>
+                    <div class="col-sm-4">
+                        <input type="text" google-places location=input.route.end></input>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <span ng-repeat="x in input.route.dist">
+                    {{x.Text}}
+                </span>
+            </div>
+        </div>
+
+        <ng-include src='MapPath'></ng-include>
+
+
+        <table st-table="RList" st-pagination-scroll st-pipe="callServer" class="table table-striped table-hover table-bordered">
+            <thead>
+                <tr>
+                    <!--<th width="10%">Selection</th>-->
+                    <th width="75%" lr-drag-src="headers" lr-drop-target="headers" ng-repeat="col in RColumns" st-sort="{{col.Name}}" sortchanged="sortChangedRole(col.Name,sortDirection)">{{col.FriendlyName}}</th>
+                    <th width="25%" style="text-align:center">Actions</th>
+                </tr>
+
+            </thead>
+
+            <tbody>
+                <tr ng-repeat="row in RList" class={{row.selection()}}>
+
+
+                    <td>
+                        <span>{{row.inf.Marca}}</span>
+                        <span>{{row.inf.NrTotalLocuri}}</span>
+                        <span>{{row.inf.Tip}}</span>
+                        <img src="{{row.inf.VImg}}">
+                    </td>
+
+                    <td>
+                        <span>{{row.inf.UserName}}</span>
+                        <img src="{{row.inf.UserImg}}">
+                    </td>
+
+                    <td>
+                        <span>{{row.inf.StartDate | fromNow}}</span>
+                        <span>{{row.inf.Price}}</span>
+                    </td>
+                    <td>
+                        <span>{{row.inf.IsTwoWay}}</span>
+                        <span>{{row.inf.IsRepetitive}}</span>
+                    </td>
+
+                    <td> <span ng-click="editMyCar(row)">Edit</span> </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="col-md-12 text-center">
+            <jq-pager total-items="RPager.Pager.totalServerItems"
+                      page-index="RPager.Pager.currentPage"
+                      items-per-page="RPager.Pager.pageSize">
+            </jq-pager>
+        </div>
+    </div>

@@ -1,0 +1,97 @@
+<select ng-model="travelMode" ng-init="travelMode='DRIVING'">
+    <option value="DRIVING">Driving</option>
+    <option value="WALKING">Walking</option>
+    <option value="BICYCLING">Bicycling</option>
+    <option value="TRANSIT">Transit</option>
+</select>
+<div class="panel panel-default">
+    <div class="panel-body form-horizontal payment-form">
+
+        <div class="row">
+            <div class="col-sm-7">
+                <div class="form-group ">
+                    <label for="concept" class="col-sm-3 control-label">Start location</label>
+                    <div class="col-sm-4">
+                        <input type="text" google-places location=input.route.start></input>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="description" class="col-sm-3 control-label">End Location</label>
+                    <div class="col-sm-4">
+                        <input type="text" google-places location=input.route.end></input>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <span ng-repeat="x in input.route.dist">
+                    {{x.Text}}
+                </span>
+            </div>
+        </div>
+
+        <!--<div class="form-group">
+            <map zoom="11" center="[40.74, -74.18]">
+            </map>
+        </div>-->
+        {{MapPath}}
+        <ng-include src='MapPath'></ng-include>
+
+
+
+        <div class="form-group">
+            <div class="col-sm-6 datetime">
+                <label for="date" class="col-sm-3">Date</label>
+
+                <p class="input-group">
+                    <input type="text" name="test" class="form-control" datepicker-popup="dd-MMM-yyyy" ng-model="input.startDate" is-open="data.opened" datepicker-options="dateOptions" close-text="Close" ng-required="true" />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-disabled="false" ng-click="openDate($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </p>
+            </div>
+            <div class="col-sm-6 text-right">
+                <timepicker ng-model="input.startTime" ng-change="changed()" hour-step="input.hstep" minute-step="input.mstep" show-meridian="ismeridian"></timepicker>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="car">Masina</label>
+            <div class="col-sm-9">
+                <select id="models" class="form-control"
+                        ng-model="input.CarGuid"
+                        ng-options="it.CarGuid as it.NrInm for it in data.myCars">
+                    <option value="0">Select</option>
+                </select>
+            </div>
+        </div>
+
+
+        <div class="form-group">
+            <div class="col-sm-9">
+                <input id="useRec" type="checkbox" ng-model="input.useRecurrence" ng-change="ShowHideRecurrence()" />
+                <label for="useRec" class="control-label">Use Rec</label>
+            </div>
+         </div>
+
+        
+        <div ng-show="input.useRecurrence">
+            <div class="form-group">
+                <ng-include src='SchedPath' />
+                </ng-include>
+            </div>
+
+            <div class="form-group">
+                <label for="description" class="col-sm-3 control-label">Telefon</label>
+                <div class="col-sm-9">
+                    <input type="text" ng-model="input.transporter.phone" ui-mask="(999) 999-9999"></input>
+                </div>
+            </div>
+
+        </div>
+        <div class="form-group">
+            <button type="button" class="btn btn-primary" ng-click="saveOfertaTransport()">
+                Single Toggle
+            </button>
+            <span>{{input.ERR}}</span>
+        </div>
+    </div>

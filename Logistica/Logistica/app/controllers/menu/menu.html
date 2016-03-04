@@ -1,0 +1,153 @@
+
+
+
+
+
+<div ng-controller="MenuController" class="LeftMenu">
+   
+    <div class="panel-group" id="accordion">
+
+        <!-- Adventure Works -->
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne"><i class="fa fa-paper-plane sfp-yellow"></i> Adventure Works</a>
+                </h4>
+            </div>
+            <div id="collapseOne" class="panel-collapse collapse">
+               <li ng-repeat="it in advWorksItems" class="list-group-item" has-permission
+                    functionality-name="{{it.id}}"
+                    permissions="permissions">
+                    <button ng-if="isPermissionsEnabled"
+                            ng-click="showPermissionsPopup(it.id,it.text)"
+                            class="btn btn-warning btn-xs">
+                        <i class="{{it.cssClass}}"></i>
+                    </button>
+
+                    <a href="javascript:void(0)"
+                       ng-click="menuItemClicked(it)"
+                       has-permission
+                       functionality-name="{{it.id}}"
+                       permissions="permissions">{{it.text}}</a>
+                </li>
+            </div>
+        </div>
+
+    <!--Security -->
+    <div class="panel panel-default"
+        has-permission
+        functionality-name="e7029ca9-3b87-4e94-97a7-af1d532d1578"
+        permissions="permissions"
+    >
+        <div class="panel-heading">
+            <h4 class="panel-title">
+               
+
+                <button ng-if="isPermissionsEnabled"
+                    has-permission
+                    functionality-name="e7029ca9-3b87-4e94-97a7-af1d532d1578"
+                    permissions="permissions"
+                    ng-click="showPermissionsPopup('e7029ca9-3b87-4e94-97a7-af1d532d1578','View Security')"
+                    class="btn btn-warning btn-xs"><i class="fa fa-pencil"></i>
+                 </button>        
+                <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo"><i class="fa fa-lock sfp-yellow"></i> Security</a>
+
+            </h4>
+        </div>
+        
+        
+        <div id="collapseTwo" class="panel-collapse collapse collapse in">
+            <ul class="list-group">
+                <li ng-repeat="it in menuItems" class="list-group-item" has-permission
+                    functionality-name="{{it.id}}"
+                    permissions="permissions">
+                    <button ng-if="isPermissionsEnabled"
+                            ng-click="showPermissionsPopup(it.id,it.text)"
+                            class="btn btn-warning btn-xs">
+                        <i class="{{it.cssClass}}"></i>
+                    </button>
+
+                    <a href="javascript:void(0)"
+                       ng-click="menuItemClicked(it)"
+                       has-permission
+                       functionality-name="{{it.id}}"
+                       permissions="permissions">{{it.text}}</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Errors -->
+        <div class="panel panel-default"
+             has-permission
+             functionality-name="ecab7444-0641-4e57-a005-3b1ad514275e"
+             permissions="permissions">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <button ng-if="isPermissionsEnabled"
+                            has-permission
+                            functionality-name="ecab7444-0641-4e57-a005-3b1ad514275e"
+                            permissions="permissions"
+                            ng-click="showPermissionsPopup('ecab7444-0641-4e57-a005-3b1ad514275e','View Errors')"
+                            class="btn btn-warning btn-xs">
+                        <i class="fa fa-pencil"></i>
+                    </button>
+                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree"><i class="fa fa-times sfp-yellow"></i> Errors</a>
+                </h4>
+            </div>
+            <div id="collapseThree" class="panel-collapse collapse">
+                <ul class="list-group">
+                    <li ng-repeat="it in errorItems" class="list-group-item">
+                        <button ng-if="isPermissionsEnabled"
+                                ng-click="showPermissionsPopup(it.id,it.text)"
+                                class="btn btn-warning btn-xs">
+                            <i class="{{it.cssClass}}"></i>
+                        </button>
+                        <a href="javascript:void(0)"
+                           ng-click="menuItemClicked(it)"
+                           has-permission
+                           functionality-name="{{it.id}}"
+                           permissions="permissions">{{it.text}}</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+    <!-- Audit -->
+        <div class="panel panel-default"
+             has-permission
+             functionality-name="b9b2e4a1-200a-42ef-bf71-d88fc1068fe7"
+             permissions="permissions">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <button ng-if="isPermissionsEnabled"
+                            has-permission
+                            functionality-name="b9b2e4a1-200a-42ef-bf71-d88fc1068fe7"
+                            permissions="permissions"
+                            ng-click="showPermissionsPopup('b9b2e4a1-200a-42ef-bf71-d88fc1068fe7','View Audit')"
+                            class="btn btn-warning btn-xs">
+                        <i class="fa fa-pencil"></i>
+                    </button>
+                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseFour"><i class="fa fa-file sfp-yellow"></i> Audit</a>
+                </h4>
+            </div>
+            <div id="collapseFour" class="panel-collapse collapse">
+                <ul class="list-group">
+                    <li ng-repeat="it in auditItems" class="list-group-item">
+                        <button ng-if="isPermissionsEnabled"
+                                ng-click="showPermissionsPopup(it.id,it.text)"
+                                class="btn btn-warning btn-xs">
+                            <i class="{{it.cssClass}}"></i>
+                        </button>
+                        <a href="javascript:void(0)"
+                           ng-click="menuItemClicked(it)"
+                           has-permission
+                           functionality-name="{{it.id}}"
+                           permissions="permissions">{{it.text}}</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+</div>
+</div>
+

@@ -1,0 +1,210 @@
+﻿.controls
+{
+  margin-bottom: 15px;
+}
+
+span.mc
+{
+  color: red;
+  text-decoration: none;
+}
+
+.w400
+{
+  width: 400px;
+}
+.pac-container {
+  z-index: 1052 !important;
+}
+
+.ui-autocomplete {
+    z-index: 1051 !important;
+}
+
+.sch button span {
+    background-color: limegreen;
+    border-radius: 32px;
+    color: black;
+  }
+
+.datetime
+{
+  margin-top: 34px;
+}
+.bold 
+{ font-weight: bold; }
+
+.left-side {
+  width: 210px;
+  float: left;
+}
+
+.Red
+{
+  color: red;
+}
+input, textarea, button { margin-top:10px }
+
+/* Required field START */
+
+.required-field-block {
+    position: relative;   
+}
+
+.required-field-block .required-icon {
+    display: inline-block;
+    vertical-align: middle;
+    margin: -0.25em 0.25em 0em;
+    background-color: #E8E8E8;
+    border-color: #E8E8E8;
+    padding: 0.5em 0.8em;
+    color: rgba(0, 0, 0, 0.65);
+    text-transform: uppercase;
+    font-weight: normal;
+    border-radius: 0.325em;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-transition: background 0.1s linear;
+    -moz-transition: background 0.1s linear;
+    transition: background 0.1s linear;
+    font-size: 75%;
+}
+  
+  .required-field-block .required-icon.r {
+    margin-right: 15px;
+}
+
+.required-field-block .required-icon {
+    background-color: transparent;
+    position: absolute;
+    top: 0em;
+    right: 0em;
+    z-index: 10;
+    margin: 0em;
+    width: 30px;
+    height: 30px;
+    padding: 0em;
+    text-align: center;
+    -webkit-transition: color 0.2s ease;
+    -moz-transition: color 0.2s ease;
+    transition: color 0.2s ease;
+}
+
+.required-field-block .required-icon:after {
+    position: absolute;
+    content: "";
+    right: 1px;
+    top: 1px;
+    z-index: -1;
+    width: 0em;
+    height: 0em;
+    border-top: 0em solid transparent;
+    border-right: 30px solid transparent;
+    border-bottom: 30px solid transparent;
+    border-left: 0em solid transparent;
+    border-right-color: inherit;
+    -webkit-transition: border-color 0.2s ease;
+    -moz-transition: border-color 0.2s ease;
+    transition: border-color 0.2s ease;
+}
+
+.required-field-block .required-icon .text {
+  color: #B80000;
+  font-size: 26px;
+  margin: -3px 0 0 12px;
+}
+
+.required-field-block .required-icon {
+  background-color: transparent;
+  position: absolute;
+  top: 0em;
+  right: 0em;
+  z-index: 10;
+  margin: 0em;
+  width: 30px;
+  height: 30px;
+  padding: 0em;
+  text-align: center;
+  -webkit-transition: color 0.2s ease;
+  -moz-transition: color 0.2s ease;
+  transition: color 0.2s ease;
+}
+/* Required field END */
+
+
+.doc-alert {
+  border-left: 5px solid #FFFFFF;
+  margin: 20px 0;
+  padding-left: 3px;
+}
+.doc-alert.doc-alert-warning {
+  border-left-color: #c0392b;
+}
+.doc-alert.doc-alert-info {
+  border-left-color: #1ABC9C;
+}
+
+.my .form-control
+{
+  width: 200px;!important;
+  display:inline;!important;
+}
+
+.contextMenuMap {
+	position: absolute;
+	z-index: 1000;
+
+	display:none;
+
+	min-width: 120px;
+
+	background: #eee;
+	border:1px solid #777;
+
+}
+
+.contextMenuMap ul {
+
+	padding: 3px 0px;
+	margin: 0px;
+
+	border: solid 1px #fff;
+}
+
+.contextMenuMap li {
+	list-style: none;
+	padding: 0px 1px;
+	margin: 0px;
+}
+.contextMenuMap a {
+	display: block;
+	color: #000;
+	text-decoration: none;
+	line-height: 22px;
+	height: 22px;
+	padding: 1px 8px;
+}
+
+.contextMenuMap li.hover a {
+	padding: 0px 7px;
+	background-color: #DFE6F5;
+	border: 1px solid #A2C1FA;
+	border-radius:2px;
+}
+
+.contextMenuMap li.separator div {
+	margin: 3px 0px;
+	border-top: solid 1px #ccc;
+	border-bottom: solid 1px #fff;
+}
+
+
+.thumb {
+    width:70px;
+    height:70px;
+    margin-left:5px;
+    cursor:pointer;
+}
+

@@ -1,0 +1,21 @@
+{
+"Library":"UsersImplementation",
+"Namespace":"UsersImplementation.Repositories.CarRepository",
+"Method":"GetAll"
+}
+
+
+{
+"Library":"UsersImplementation",
+"Namespace":"UsersImplementation.Repositories.CarModelRepository",
+"Method":"GetModelsForCar",
+"JSON":"{\"ID\":1}"
+}
+
+public string Library { get; set; }
+        public string Namespace { get; set; }
+        public string Method { get; set; }
+        public string  JSON { get; set; }
+        public Guid RequestGuid { get; set; }
+        public string ChannelId { get; set; }
+        public string RKey { get; set; }

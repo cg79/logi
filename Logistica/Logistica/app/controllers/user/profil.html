@@ -1,0 +1,56 @@
+<ng-form name="frm"  novalidate>
+<div class="panel-body form-horizontal">
+	<div class="form-group required-field-block">
+		<label class="col-md-3 control-label" for="name">{{ui.ID_LOGIN}}</label>
+		<div class="col-md-6 ">
+			<input type="text" name="login" id="login" class="form-control input-sm" placeholder="{{ui.ID_LOGIN}}" ng-model="input.Login" required>
+			
+			<div class="required-icon r">
+				<div class="text">*</div>
+			</div>
+
+			<p ng-show="frm.login.$invalid && !frm.login.$pristine" class="error">required</p>
+		</div>
+	</div>
+	
+		<div class="form-group required-field-block">
+		<label class="col-md-3 control-label" for="name">{{ui.ID_FIRST_NAME}}</label>
+		<div class="col-md-6 ">
+			<input type="text" name="first_name" id="first_name" class="form-control input-sm" placeholder="{{ui.ID_FIRST_NAME}}" ng-model="input.FirstName">
+		</div>
+	</div>
+
+
+<div class="form-group required-field-block">
+		<label class="col-md-3 control-label" for="name">{{ui.ID_LAST_NAME}}</label>
+		<div class="col-md-6 ">
+			<input type="text" name="first_name" id="first_name" class="form-control input-sm" placeholder="{{ui.ID_LAST_NAME}}" ng-model="input.LastName">
+		</div>
+	</div>
+
+	
+<div class="form-group required-field-block">
+		<label class="col-md-3 control-label" for="name">{{ui.ID_PHONE}}</label>
+		<div class="col-md-6 ">
+			<input type="text" name="phone" id="phone" class="form-control input-sm" placeholder="{{ui.ID_PHONE}}" ng-model="input.Phone" ui-mask="(999) 999-9999" required>
+			
+			<div class="required-icon r">
+				<div class="text">*</div>
+			</div>
+
+			<p ng-show="frm.phone.$invalid && !frm.phone.$pristine" class="error">required</p>
+		</div>
+	</div>
+	
+	
+	
+	
+	
+	<div class="form-group">
+	<label class="col-md-3 control-label" for="name"></label>
+		<button type="button" class="btn btn-default" ng-disabled="frm.$invalid" ng-click="updateProfilUser()">{{ui.ID_SAVE}}</button>
+	</div>
+	<span>{{DB_OP}}</span>
+	
+</div>
+</ng-form>

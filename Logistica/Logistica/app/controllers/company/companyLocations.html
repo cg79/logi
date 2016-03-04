@@ -1,0 +1,26 @@
+<div id="comp" ng-controller="CompanyController">
+	<ng-form name="cmp"  novalidate>
+	<div class="panel-body form-horizontal">
+		
+        
+      <div class="row">
+            <div class="col-sm-7">
+                <div class="form-group ">
+                    <label for="concept" class="col-sm-3 control-label">Start location</label>
+                    <div class="col-sm-4">
+                        <input type="text" class="w400" google-places location=input.route.wayPointByHand  ng-model="input.route.selectedAddress"></input>
+                    </div>
+                </div>
+                
+            </div>
+           
+        </div>
+
+      
+
+        <ng-include src='MapPath'/>
+        
+		
+	</div>
+</ng-form>
+</div>

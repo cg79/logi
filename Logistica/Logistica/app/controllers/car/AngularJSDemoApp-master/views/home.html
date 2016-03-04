@@ -1,0 +1,14 @@
+<div class="jumbotron text-center">
+    <h1>Home Page</h1>
+    <p>This page demonstrates <span class="text-danger">nested</span> views.</p>  
+     {{sc.info}}
+    <a ui-sref=".list" class="btn btn-primary">List</a>
+    <a ui-sref=".paragraph" class="btn btn-danger">Paragraph</a> 
+</div>
+<div class="col-md-12">
+	{{sc.info}}
+	{{sc.text}}
+</div>
+<strong>ui-view container:</strong>
+<div ui-view></div>
+

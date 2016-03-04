@@ -1,0 +1,22 @@
+.leftMenu {
+    /* border: 1px solid #b6b6b6;   */
+    float: left;
+    position: relative;
+    max-width: 16.66666667%;
+    border:4px groove #808080;
+    min-height:300px;
+    /* overflow: hidden;*/
+}
+
+.rightMenu {
+    /*padding-bottom: 250px;*/
+    overflow-x: auto;
+    overflow-y: scroll;
+    height:300px;
+    min-height: 300px;
+    word-wrap: break-word;
+    -ms-word-wrap: normal;
+    padding-left: 10px;
+    background-color: #F7F9D2;
+    border:4px groove #808080;
+}

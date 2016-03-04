@@ -1,0 +1,22 @@
+{
+	"countries":[
+			{"name":"Peru"},
+			{"name":"US"},
+			{"name":"UK"},
+			{"name":"Romania"},
+			{"name":"Hungary"},
+			{"name":"Ukraine"},
+			{"name":"Russia"},
+			{"name":"Moldova"},
+			{"name":"Qatar"},
+			{"name":"Kyrgyzstan"},
+			{"name":"Kazakhstan"},
+			{"name":"Poland"},
+			{"name":"Bulgaria"},
+			{"name":"India"},
+			{"name":"China"},
+			{"name":"Germany"},
+			{"name":"France"},
+			{"name":"Spain"}
+		]	
+}

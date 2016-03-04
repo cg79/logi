@@ -1,0 +1,31 @@
+﻿<div id="schedule" ng-controller="SchedulerController">
+	<!-- {{scheduleInput}} -->
+	<div class="row">
+		
+		<div class="col-md-3">
+			<div class="crit" ng-repeat="n in scheduleInput.Recurrence">
+				<div class="form-group">
+					<input  type="radio" name="crit" id="{{n.ID}}" value="{{n.ID}}" ng-model="scheduleInput.R1" ng-change="criteriaChanged(n.ID)" />
+					<label for="{{n.ID}}">{{n.Name}}</label>
+				</div>
+			</div>
+
+			<div ng-repeat="n in recurrences">
+			<span ng-click="scrolDate(n)" class="{{n.getCSS()}}">{{n.date | mom}} </span>
+		</div>
+
+		</div>
+		<div class="col-md-9">
+			<ng-include src="RPath"/>
+		</div>
+		
+		<!-- http://plnkr.co/edit/nGtKOt5lB06jw8v5NCsP?p=preview -->
+		<div style="display:inline-block; min-height:290px;">
+			<div class="well well-sm" ng-model="dt">
+				<datepicker min="minDate" show-weeks="showWeeks" min-date="minDate" init-date="schedDate" ng-model="schedDate" custom-class="getDayClass(date, mode)"></datepicker>
+			</div>
+		</div>
+		
+	</div>
+</div>
+</div>

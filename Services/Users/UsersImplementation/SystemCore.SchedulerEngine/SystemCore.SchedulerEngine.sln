@@ -1,0 +1,46 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SystemCore.SchedulerEngine", "SystemCore.SchedulerEngine.csproj", "{A1A301DA-FDBD-41D4-91FD-78F9735910C2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Scheduler.Testing", "..\SystemCore.SchedulerEngine.DesktopTesting\Scheduler.Testing.csproj", "{5B8A38C8-DA67-4921-9317-797D17A6213F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SchedulerEngine.UnitTesting", "..\SystemCore.SchedulerEngine.UnitTesting\SchedulerEngine.UnitTesting.csproj", "{75E6F840-4990-48EE-AAA8-40B9E3E4A22C}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 4
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://sdtfs.devsd.com:8080/
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = SystemCore.SchedulerEngine.csproj
+		SccLocalPath1 = .
+		SccProjectUniqueName2 = ..\\SystemCore.SchedulerEngine.DesktopTesting\\Scheduler.Testing.csproj
+		SccProjectName2 = ../SystemCore.SchedulerEngine.DesktopTesting
+		SccLocalPath2 = ..\\SystemCore.SchedulerEngine.DesktopTesting
+		SccProjectUniqueName3 = ..\\SystemCore.SchedulerEngine.UnitTesting\\SchedulerEngine.UnitTesting.csproj
+		SccProjectName3 = ../SystemCore.SchedulerEngine.UnitTesting
+		SccLocalPath3 = ..\\SystemCore.SchedulerEngine.UnitTesting
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A1A301DA-FDBD-41D4-91FD-78F9735910C2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A1A301DA-FDBD-41D4-91FD-78F9735910C2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A1A301DA-FDBD-41D4-91FD-78F9735910C2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A1A301DA-FDBD-41D4-91FD-78F9735910C2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5B8A38C8-DA67-4921-9317-797D17A6213F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5B8A38C8-DA67-4921-9317-797D17A6213F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5B8A38C8-DA67-4921-9317-797D17A6213F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5B8A38C8-DA67-4921-9317-797D17A6213F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{75E6F840-4990-48EE-AAA8-40B9E3E4A22C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{75E6F840-4990-48EE-AAA8-40B9E3E4A22C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{75E6F840-4990-48EE-AAA8-40B9E3E4A22C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{75E6F840-4990-48EE-AAA8-40B9E3E4A22C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

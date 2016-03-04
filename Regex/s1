@@ -1,0 +1,71 @@
+// ==UserScript==
+// @name        cmodels
+// @namespace   n1
+// @include     https://www.blablacar.ro/dashboard/profile/car/add
+// @version     1
+// @grant       none
+// ==/UserScript==
+
+
+
+$('#profile_car_make').on('change', function() {
+        var sss = $(this).find(":selected").val();
+    //alert( $(this).find(":selected").val() );
+        alert(sss);
+        var myUrl =  "https://www.blablacar.ro/car-models/";
+                                myUrl = myUrl+ sss+"?ajax=true";
+console.info("iui");  
+                                 $.ajax({
+                                            url: myUrl,
+                                            type: "GET",
+                                            cache: false,
+                                            success: function (data, textStatus, jqXHR) {
+                                                var rez = "'"+sss+"'" + ":";
+                                                 console.info(rez);     
+                                                var models1 = data.split(",");
+                                                for(var i=0;i<models1.length;++)
+                                                    {
+                                                     rez = rez + "'"+models[i]+"'";
+                                                    }
+                                                    console.info(rez);     
+
+                                            },
+                                            error: function (jqXHR, textStatus, errorThrown) {
+                                                console.log(jqXHR);     
+
+                                            }
+                                        });
+});
+
+ $("#profile_car_make").children("option").each(function(it,v){
+       return;
+    var sss = $(this).html();
+       
+
+       setInterval(function () 
+                   {
+                           var myUrl =  "https://www.blablacar.ro/car-models/";
+                                myUrl = myUrl+ $(this).html()+"?ajax=true";
+
+                                 $.ajax({
+                                            url: myUrl,
+                                            type: "GET",
+                                            cache: false,
+                                            success: function (data, textStatus, jqXHR) {
+                                              console.info(sss + " : " + data);     
+
+
+                                            },
+                                            error: function (jqXHR, textStatus, errorThrown) {
+                                                console.log(jqXHR);     
+
+                                            }
+                                        });
+                           
+                           
+                   }, 3000);
+
+       
+
+
+    });

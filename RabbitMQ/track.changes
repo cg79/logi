@@ -1,0 +1,9 @@
+//if(TrackChanges)
+						//{
+						  // AddChange(new ChangedPropertyValue()
+						   //{
+							//PropertyName = "<#=col.PropertyName #>",
+							//OldValue =  _<#=Char.ToLowerInvariant(col.PropertyName[0]) + col.PropertyName.Substring(1) #>,
+							//NewValue = value
+						   //});
+						//}

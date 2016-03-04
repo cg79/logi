@@ -1,0 +1,25 @@
+<!-- New pagination -->
+        <table class="table table-striped table-hover table-bordered">
+            <tr>
+                <td>
+                   <div class="col-md-12 text-center">
+                       <form class="form-inline">
+                           <button class="btn btn-default btn-sm" ng-click="first()" ng-disabled="noPrevious()"><i class="fa fa-angle-double-left"></i></button>
+                           <button class="btn btn-default btn-sm" ng-click="previous()" ng-disabled="noPrevious()"><i class="fa fa-angle-left"></i></button>
+
+                           Page <input type="text" class="form-control input-sm" size="3" ng-model="pageIndex" > of {{totalPages}}
+
+                           <button class="btn btn-default btn-sm" ng-click="next()" ng-disabled="noNext()"><i class="fa fa-angle-right"></i></button>
+                           <button class="btn btn-default btn-sm" ng-click="last()" ng-disabled="noNext()"><i class="fa fa-angle-double-right"></i></button>
+                            <select ng-model="itemsPerPage" class="form-control input-sm"
+                                            ng-options="it as it for it in rows">
+                            </select>
+
+                            <span>{{totalItems}}</span>
+                           
+                        </form>
+                   </div>
+                </td>
+            </tr>
+        </table>
+    <!-- New pagination  ng-change="changePageIndex({{pageIndex}})" -->

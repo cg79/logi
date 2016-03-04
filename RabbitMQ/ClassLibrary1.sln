@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ESB.Utils", "ESB.Utils\ESB.Utils.csproj", "{45BD07A8-EEEE-4C84-B767-4404B6ECAFF3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EasyNetQ.DTO", "EasyNetQ.DTO\EasyNetQ.DTO.csproj", "{D2F160F3-05C7-4147-A2C5-2338B6D62B1C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EasyNetQ.Desktop", "EasyNetQ.Desktop\EasyNetQ.Desktop.csproj", "{6C28DAAF-75BE-43EE-926D-A2993808A913}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{45BD07A8-EEEE-4C84-B767-4404B6ECAFF3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{45BD07A8-EEEE-4C84-B767-4404B6ECAFF3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{45BD07A8-EEEE-4C84-B767-4404B6ECAFF3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{45BD07A8-EEEE-4C84-B767-4404B6ECAFF3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D2F160F3-05C7-4147-A2C5-2338B6D62B1C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D2F160F3-05C7-4147-A2C5-2338B6D62B1C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D2F160F3-05C7-4147-A2C5-2338B6D62B1C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D2F160F3-05C7-4147-A2C5-2338B6D62B1C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6C28DAAF-75BE-43EE-926D-A2993808A913}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6C28DAAF-75BE-43EE-926D-A2993808A913}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6C28DAAF-75BE-43EE-926D-A2993808A913}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6C28DAAF-75BE-43EE-926D-A2993808A913}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

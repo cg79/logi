@@ -1,0 +1,136 @@
+﻿<div class="panel-body form-horizontal my ">
+    <tabset>
+    <tab heading="{{ui.ID_DET}}">
+    <div class="col-lg-12">
+        <div class="form-group">
+            <label for="cars" class="col-md-3 control-label">{{ui.ID_MARCA}}</label>
+            <select class="form-control"
+                ng-model="input.carID"
+                ng-options="it.ID as it.Name for it in input.cars"
+                ng-change="carChanged()">
+            </select>
+            <!-- <ui-select id="cars" ng-model="input.car.selected" theme="select2" ng-disabled="disabled" style="min-width: 200px;">
+            <ui-select-match placeholder="Select a person in the list or search his name/age...">{{$select.selected.Name}}</ui-select-match>
+            <ui-select-choices repeat="person in input.cars | propsFilter: {Name: $select.search}">
+            <div ng-bind-html="person.Name | highlight: $select.search"></div>
+            </ui-select-choices>
+            </ui-select> -->
+            <button type="button" class="btn btn-default" ng-click="reload()" >button</button>
+            <img src="{{user.uiImage}}" alt="" class="img-circle img30_30 thumb" ng-click="chooseAvatar()">
+            
+            <form id="fileUploadForm" method="post" enctype="multipart/form-data">
+                <div class="hide">
+                    <input id="carFileUpload" type="file" ng-file-select="" ng-model="picFile" name="files[]" accept="image/*" ng-file-change="generateThumb(picFile[0], $files)" class="hide ng-pristine ng-untouched ng-valid ng-valid-required"
+                    required=""/>
+                </div>
+            </form>
+            
+        </div>
+        <div class="form-group">
+            <label for="models" class="col-md-3 control-label">{{ui.ID_MODEL}}</label>
+            
+            <select id="models" class="form-control"
+                ng-model="input.carModelID"
+                ng-options="it.ID as it.Name for it in input.carModels"
+                >
+                <option value="0">Select</option>
+            </select>
+        </div>
+        
+        <div class="form-group">
+            <label for="nrinm" class="col-md-3 control-label">{{ui.ID_NR}}</label>
+            <input type="text" id="nrinm" ng-model="input.NrInm">
+        </div>
+
+        <div class="form-group">
+            <label for="confort" class="col-md-3 control-label">{{ui.ID_CONFORT}}</label>
+            <select id="confort" class="form-control"
+                ng-model="input.confortID"
+                ng-options="it.ID as it.Name for it in ui.M_CONFORT"
+                >
+            </select>
+        </div>
+        
+        <div class="form-group">
+            <label for="nrLocuri" class="col-md-3 control-label">{{ui.ID_NR_LOCURI}}</label>
+            <select id="nrLocuri" class="form-control"
+                ng-model="input.nrLocuri"
+                ng-options="it.ID as it.Name for it in ui.M_NR_LOCURI"
+                >
+               
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="tipMasina" class="col-md-3 control-label">{{ui.ID_TIP_MASINA}}</label>
+            <select class="form-control"
+                id="tipMasina"
+                ng-model="input.tipMasinaID"
+                ng-options="it.ID as it.Name for it in ui.M_TIP_MASINA"
+                >
+            </select>
+        </div>
+        <div class="row">
+            <label  class="col-md-3 control-label">{{ui.ID_CARACTERISTICI}}</label>
+        </div>
+        <div class="form-group row">
+            <label  class="col-md-3 control-label"></label>
+            <div class="col-md-9 row-fluid">
+                <div  ng-repeat="n in ui.M_CARACTERISTICI">
+                    <input id="cw{{n}}" type="checkbox"  name="carac" value="{{n.ID}}" ng-model="n.Selected" />
+                    <label for="cw{{n}}">{{n.Name}}</label>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+    </tab>
+    <tab heading="{{ui.ID_V_DET}}">
+    <div class="form-group">
+        <div>
+            <label for="vlung" class="col-md-3 control-label">{{ui.ID_LUNGIME}}</label>
+            <input id= "vlung" type="text" class="form-control"  ng-model="input.volum.lungime.v"  numbers-only="numbers-only"  ng-min="0" ng-max="50" ng-change="lungimeChanged()">
+            <select class="form-control"
+                ng-model="input.volum.lungime.dim"
+                ng-options="it.ID as it.Name for it in input.volum.lungime.values"
+                >
+            </select>
+        </div>
+    </div>
+    
+    <div class="form-group row">
+        <label  for="vlatime" class="col-md-3 control-label">{{ui.ID_LATIME}}</label>
+        <input type="text" class="form-control"  id="vlatime" ng-model="input.volum.latime.v"  numbers-only="numbers-only" ng-min="0" ng-max="50" ng-change="latimeChanged()">
+        <select class="form-control"
+            ng-model="input.volum.latime.dim"
+            ng-options="it.ID as it.Name for it in input.volum.latime.values"
+            >
+        </select>
+    </div>
+    
+    <div class="form-group row">
+        <label for="vinalt" class="col-md-3 control-label">{{ui.ID_INALTIME}}</label>
+        <input type="text" class="form-control"  id="vinalt" ng-model="input.volum.inaltime.v"  numbers-only="numbers-only" ng-min="0" ng-max="50" ng-change="inaltimeChanged()">
+        <select class="form-control"
+            ng-model="input.volum.inaltime.dim"
+            ng-options="it.ID as it.Name for it in input.volum.inaltime.values"
+            >
+        </select>
+        <input type="text" class="form-control"  id="idVolum" ng-model="input.volum.volum">
+    </div>
+    <div class="form-group row">
+        <label for="gmax" class="col-md-3 control-label">{{ui.ID_GREUTATE_MAXIMA}}</label>
+        <input type="text"  class="form-control"  id="gmax" ng-model="input.greutate.v" numbers-only="numbers-only">
+        <select class="form-control"
+            ng-model="input.greutate.dim"
+            ng-options="it.ID as it.Name for it in ui.M_GREUTATE"
+            >
+        </select>
+    </div>
+    </tab>
+    </tabset>
+    <div class="row">
+        <label class="col-md-3 control-label"></label>
+        <button type="button" class="btn btn-default btn-primary" ng-disabled="frm.$invalid" ng-click="addEditCar()">{{ui.ID_SAVE}}</button>
+    </div>
+    
+</div>

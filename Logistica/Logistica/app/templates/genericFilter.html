@@ -1,0 +1,30 @@
+<form class="form-inline">
+<input type="text" class="form-control" ng-model="searchText"/>
+	<button type="button" class="btn btn-danger dropdown-toggle" ng-click="clearSearchText()">
+		Clear
+      </button>
+
+
+<div class="btn-group" dropdown is-open="status.isopen">
+      <button type="button" class="btn btn-primary dropdown-toggle" dropdown-toggle ng-disabled="disabled" ng-click="filter()">
+        Filter
+      </button>
+
+      <button type="button" class="btn btn-primary dropdown-toggle" dropdown-toggle>
+        <span class="caret"></span>
+        <span class="sr-only">Split button!</span>
+      </button>
+
+      <ul class="dropdown-menu" role="menu">
+      	
+      	<li ng-repeat="field in gridColumns">
+      			<input type="checkbox" ng-model="field.Selected" ng-change="filter()" id="{{field.Name}}"/> 
+              <label for="{{field.Name}}"> {{field.FriendlyName}}</label>
+      	
+		<li class="divider"></li>
+        <li><a><span ng-click="clearFilters()">Uncheck all</span></a></li>
+      </ul>
+
+    </div>
+</form>
+

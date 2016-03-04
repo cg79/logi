@@ -1,0 +1,129 @@
+<div id="comp" ng-controller="CompanyController">
+	<ng-form name="cmp"  novalidate>
+	<div class="panel-body form-horizontal">
+		{{input.cmpInfo}}
+		<div class="form-group required-field-block">
+			<label class="col-md-2 control-label" for="numeFirma">{{ui.ID_NUME_FIRMA}}</label>
+			<div class="col-md-3 ">
+				<input type="text" name="numeFirma" id="numeFirma" class="form-control input-sm" placeholder="{{ui.ID_NUME_FIRMA}}" ng-model="input.cmpInfo.NumeFirma" required>
+				
+				<div class="required-icon r">
+					<div class="text">*</div>
+				</div>
+				<p class="help-block" ng-if="(cmp.numeFirma.$invalid && cmp.numeFirma.$error.required) && !cmp.$pristine">Introduceti numele firmei</p>
+				<p ng-show="cmp.numeFirma.$invalid && !cmp.$pristine" class="error">required</p>
+			</div>
+		</div>
+		{{cmp.$pristine}}
+		<div class="form-group required-field-block">
+			<label class="col-md-2 control-label" for="name">{{ui.CIF}}</label>
+			<div class="col-md-3 ">
+				<input type="text" name="cif" id="cif" class="form-control input-sm" placeholder="{{ui.CIF}}" ng-model="input.cmpInfo.CIF" required>
+				
+				<div class="required-icon r">
+					<div class="text">*</div>
+				</div>
+				<p ng-show="cmp.cif.$invalid && !cmp.$pristine" class="error">required</p>
+			</div>
+		</div>
+		
+		<div class="form-group required-field-block">
+			<label class="col-md-2 control-label" for="name">{{ui.RegCom}}</label>
+			<div class="col-md-3 ">
+				<input type="text" name="first_name" id="first_name" class="form-control input-sm" placeholder="{{ui.RegCom}}" ng-model="input.cmpInfo.REG_Comert">
+			</div>
+		</div>
+		
+		
+		<div class="controls">
+			<form role="form" autocomplete="off">
+				<label class="col-md-2 control-label" for="name">{{ui.PctLucru}}</label>
+				<div class="entry input-group col-xs-3">
+					
+					<input type="text" class="form-control input-sm" google-places location=input.cmpInfo.PuncteLucru.first ng-model="input.cmpInfo.inputAddr"></input>
+					<span class="input-group-btn">
+						<button class="btn btn-add" type="button" ng-click="showCompanyLocationsDialog()">
+						<span class="mc">
+							<i class="fa fa-map-marker fa-1x" ></i>
+						</span>
+						</button>
+					</span>
+				</div>
+			</form>
+		</div>
+		
+
+		<div class="controls" ng-repeat="todo in input.cmpInfo.PuncteLucru.getList() track by $index">
+			<label class="col-md-2 control-label"></label>
+			<div class="entry input-group col-xs-7 ">
+				<span> {{todo.address.toString()}}</span>
+				<span class="input-group-btn">
+					<button class="btn btn-add" type="button" ng-click="input.cmpInfo.PuncteLucru.removeItem($index,todo)">
+					<span class="glyphicon glyphicon-minus" ng-style="{color: myColor}" ></span>
+					</button>
+				</span>
+				
+			</div>
+		</div>
+		
+		
+		
+		
+		<div class="controls">
+			<form role="form" autocomplete="off">
+				<label class="col-md-2 control-label" for="name">{{ui.ID_PHONE}}</label>
+				<div class="entry input-group col-xs-3">
+					
+					<input type="text" name="cmpPhone" id="phone" class="form-control"  ng-model="input.cmpInfo.Phones.first" ui-mask="(999) 999-9999" >
+					<span class="input-group-btn">
+						<button class="btn  btn-add" type="button" ng-click="input.cmpInfo.Phones.addItem()">
+						<span class="glyphicon glyphicon-plus" ng-style="{color: myColor}" ></span>
+						</button>
+					</span>
+				</div>
+			</form>
+		</div>
+		<div class="controls" ng-repeat="todo in input.cmpInfo.Phones.getList() track by $index">
+			<label class="col-md-2 control-label"></label>
+			<div class="entry input-group col-xs-3 ">
+				<input type="text"  class="form-control"  ng-model="todo.text" ui-mask="(999) 999-9999" >
+				<span class="input-group-btn">
+					<button class="btn btn-add" type="button" ng-click="input.cmpInfo.Phones.removeItem($index,todo)">
+					<span class="glyphicon glyphicon-minus" ng-style="{color: myColor}" ></span>
+					</button>
+				</span>
+				
+			</div>
+		</div>
+		<div class="form-group required-field-block">
+			<label class="col-md-2 control-label" for="cmpEmail">{{ui.ID_EMAIL}}</label>
+			<div class="col-md-3 ">
+				<input type="email" name="cmpEmail" id="cmpEmail" class="form-control input-sm" placeholder="{{ui.ID_EMAIL}}" ng-model="input.cmpInfo.Email" >
+				
+			</div>
+		</div>
+		
+		<div class="form-group required-field-block">
+			<label class="col-md-2 control-label" for="name">{{ui.ID_SITE}}</label>
+			<div class="col-md-3 ">
+				<input type="text" name="webSite" id="webSite" class="form-control input-sm" placeholder="{{ui.ID_SITE}}" ng-model="input.cmpInfo.WebSite">
+			</div>
+		</div>
+		<div class="form-group1 controls">
+		<label class="col-md-2 control-label" for="name">Sigla</label>
+			<!-- //https://angular-file-upload.appspot.com/ -->
+			<img ng-src="{{siglaObj.siglaUrl}}" class="thumb" ng-click="input.cmpInfo.chooseSigla()">
+			<form id="fileSiglaForm" method="post" enctype="multipart/form-data">
+				<div class="hide">
+					<input id="siglafileupload" type="file" ng-file-select="" ng-model="input.cmpInfo.sigla" name="sigles[]" accept="image/*" ng-file-change="generateSiglaThumb(input.cmpInfo.sigla[0], $files)" class="hide"/>
+				</div>
+			</form>
+		</div>
+		
+		<div class="row controls">
+		<label class="col-md-2 control-label" for="name"></label>
+		<button ng-click="saveCompany()">Save cmp</button>
+		</div>
+		
+		</ng-form>
+	</div>
